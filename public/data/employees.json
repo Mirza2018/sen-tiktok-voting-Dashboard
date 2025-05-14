@@ -1,0 +1,107 @@
+[
+  {
+    "si": "01",
+    "name": "John Doe",
+    "email": "abc@gmail.com",
+    "phone": "516) 831-1111",
+    "availableVote": 700
+  },
+  {
+    "SI": "02",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Passenger section"
+  },
+  {
+    "SI": "03",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Earning section"
+  },
+  {
+    "SI": "04",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Driver section"
+  },
+  {
+    "SI": "05",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Passenger section"
+  },
+  {
+    "SI": "06",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Earning section"
+  },
+  {
+    "SI": "07",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Driver section"
+  },
+  {
+    "SI": "08",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Earning section"
+  },
+  {
+    "SI": "09",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Passenger section"
+  },
+  {
+    "SI": "10",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Driver section"
+  },
+  {
+    "SI": "11",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Earning section"
+  },
+  {
+    "SI": "12",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Driver section"
+  },
+  {
+    "SI": "13",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Passenger section"
+  },
+  {
+    "SI": "14",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Earning section"
+  },
+  {
+    "SI": "15",
+    "Name": "John Doe",
+    "Email": "abc@gmail.com",
+    "Phone": "516) 831-1111",
+    "Category": "Driver section"
+  }
+]

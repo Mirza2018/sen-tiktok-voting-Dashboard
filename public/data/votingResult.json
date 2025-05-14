@@ -1,0 +1,210 @@
+[
+  {
+    "id": "01",
+    "votingCandidates": [
+      { "name": "Shakila Parvin", "vote": 233 },
+      { "name": "Raisa Jahan", "vote": 50000 },
+      { "name": "awhid Afridi", "vote": 2233 },
+      { "name": "Noureen Afrose Piya", "vote": 233 }
+    ],
+    "date": "2/3/2025",
+    "winner": "Raisa Jahan",
+    "winnerVote": 50000,
+    "result": "complete"
+  },
+  {
+    "id": "02",
+    "votingCandidates": [
+      { "name": "Sarah Khan", "vote": 3000 },
+      { "name": "Imran Ali", "vote": 4500 },
+      { "name": "Fariha Iqbal", "vote": 1500 },
+      { "name": "Tariq Hassan", "vote": 1200 }
+    ],
+    "date": "5/4/2025",
+    "winner": "Imran Ali",
+    "winnerVote": 4500,
+    "result": "complete"
+  },
+  {
+    "id": "03",
+    "votingCandidates": [
+      { "name": "John Smith", "vote": 500 },
+      { "name": "Lara Croft", "vote": 12000 },
+      { "name": "Daniel Craig", "vote": 4000 },
+      { "name": "Emma Watson", "vote": 6500 }
+    ],
+    "date": "12/5/2025",
+    "winner": "Lara Croft",
+    "winnerVote": 12000,
+    "result": "complete"
+  },
+  {
+    "id": "04",
+    "votingCandidates": [
+      { "name": "Jacob Murphy", "vote": 4500 },
+      { "name": "Sophia Loren", "vote": 6000 },
+      { "name": "Leonardo DiCaprio", "vote": 8000 },
+      { "name": "Natalie Portman", "vote": 3500 }
+    ],
+    "date": "19/6/2025",
+    "winner": "Leonardo DiCaprio",
+    "winnerVote": 8000,
+    "result": "complete"
+  },
+  {
+    "id": "05",
+    "votingCandidates": [
+      { "name": "Oscar Wilde", "vote": 2000 },
+      { "name": "William Shakespeare", "vote": 15000 },
+      { "name": "Charles Dickens", "vote": 10000 },
+      { "name": "Jane Austen", "vote": 12000 }
+    ],
+    "date": "25/7/2025",
+    "winner": "William Shakespeare",
+    "winnerVote": 15000,
+    "result": "complete"
+  },
+  {
+    "id": "06",
+    "votingCandidates": [
+      { "name": "George Orwell", "vote": 5000 },
+      { "name": "Hemingway", "vote": 4000 },
+      { "name": "J.K. Rowling", "vote": 9000 },
+      { "name": "Tolkien", "vote": 8000 }
+    ],
+    "date": "14/8/2025",
+    "winner": "J.K. Rowling",
+    "winnerVote": 9000,
+    "result": "complete"
+  },
+  {
+    "id": "07",
+    "votingCandidates": [
+      { "name": "Gandhi", "vote": 12000 },
+      { "name": "Nelson Mandela", "vote": 8000 },
+      { "name": "Winston Churchill", "vote": 5000 },
+      { "name": "Abraham Lincoln", "vote": 4000 }
+    ],
+    "date": "5/9/2025",
+    "winner": "Gandhi",
+    "winnerVote": 12000,
+    "result": "complete"
+  },
+  {
+    "id": "08",
+    "votingCandidates": [
+      { "name": "Albert Einstein", "vote": 5000 },
+      { "name": "Isaac Newton", "vote": 10000 },
+      { "name": "Marie Curie", "vote": 8000 },
+      { "name": "Nikola Tesla", "vote": 12000 }
+    ],
+    "date": "19/9/2025",
+    "winner": "Nikola Tesla",
+    "winnerVote": 12000,
+    "result": "complete"
+  },
+  {
+    "id": "09",
+    "votingCandidates": [
+      { "name": "Mahatma Gandhi", "vote": 11000 },
+      { "name": "Albert Einstein", "vote": 9000 },
+      { "name": "Charles Darwin", "vote": 7000 },
+      { "name": "Isaac Newton", "vote": 8000 }
+    ],
+    "date": "1/10/2025",
+    "winner": "Mahatma Gandhi",
+    "winnerVote": 11000,
+    "result": "complete"
+  },
+  {
+    "id": "10",
+    "votingCandidates": [
+      { "name": "Florence Nightingale", "vote": 6000 },
+      { "name": "Marie Curie", "vote": 7000 },
+      { "name": "Ada Lovelace", "vote": 5000 },
+      { "name": "Mother Teresa", "vote": 8000 }
+    ],
+    "date": "15/10/2025",
+    "winner": "Mother Teresa",
+    "winnerVote": 8000,
+    "result": "complete"
+  },
+  {
+    "id": "11",
+    "votingCandidates": [
+      { "name": "William Shakespeare", "vote": 12000 },
+      { "name": "Mark Twain", "vote": 9000 },
+      { "name": "Charles Dickens", "vote": 15000 },
+      { "name": "Jane Austen", "vote": 5000 }
+    ],
+    "date": "5/11/2025",
+    "winner": "Charles Dickens",
+    "winnerVote": 15000,
+    "result": "complete"
+  },
+  {
+    "id": "12",
+    "votingCandidates": [
+      { "name": "Friedrich Nietzsche", "vote": 8000 },
+      { "name": "Jean-Paul Sartre", "vote": 5000 },
+      { "name": "Sigmund Freud", "vote": 7000 },
+      { "name": "Karl Marx", "vote": 10000 }
+    ],
+    "date": "10/11/2025",
+    "winner": "Karl Marx",
+    "winnerVote": 10000,
+    "result": "complete"
+  },
+  {
+    "id": "13",
+    "votingCandidates": [
+      { "name": "Frida Kahlo", "vote": 8000 },
+      { "name": "Pablo Picasso", "vote": 6000 },
+      { "name": "Vincent van Gogh", "vote": 12000 },
+      { "name": "Leonardo da Vinci", "vote": 7000 }
+    ],
+    "date": "12/12/2025",
+    "winner": "Vincent van Gogh",
+    "winnerVote": 12000,
+    "result": "complete"
+  },
+  {
+    "id": "14",
+    "votingCandidates": [
+      { "name": "Maya Angelou", "vote": 5000 },
+      { "name": "Harper Lee", "vote": 7000 },
+      { "name": "Toni Morrison", "vote": 8000 },
+      { "name": "Zora Neale Hurston", "vote": 6000 }
+    ],
+    "date": "20/12/2025",
+    "winner": "Toni Morrison",
+    "winnerVote": 8000,
+    "result": "complete"
+  },
+  {
+    "id": "15",
+    "votingCandidates": [
+      { "name": "Mark Zuckerberg", "vote": 12000 },
+      { "name": "Elon Musk", "vote": 15000 },
+      { "name": "Jeff Bezos", "vote": 10000 },
+      { "name": "Bill Gates", "vote": 20000 }
+    ],
+    "date": "30/12/2025",
+    "winner": "Bill Gates",
+    "winnerVote": 20000,
+    "result": "complete"
+  },
+  {
+    "id": "16",
+    "votingCandidates": [
+      { "name": "Shakila Parvin", "vote": 1200 },
+      { "name": "Raisa Jahan", "vote": 80000 },
+      { "name": "awhid Afridi", "vote": 3500 },
+      { "name": "Noureen Afrose Piya", "vote": 2200 }
+    ],
+    "date": "15/1/2026",
+    "winner": null,
+    "winnerVote": null,
+    "result": "pending"
+  }
+]

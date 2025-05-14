@@ -1,0 +1,122 @@
+[
+  {
+    "sId": "01",
+    "venueName": "KFC Port Louis Central",
+    "phone": "123-456-7801",
+    "email": "portlouis.central@kfc.com",
+    "address": "12 Harbour Street, Port Louis.",
+    "bio": "A bustling KFC outlet in the heart of Port Louis, known for its spicy fried chicken."
+  },
+  {
+    "sId": "02",
+    "venueName": "KFC Grand Baie",
+    "phone": "123-456-7802",
+    "email": "grandbaie@kfc.com",
+    "address": "25 Coastal Road, Grand Baie.",
+    "bio": "Located near the beach, offering scenic views with delicious meals."
+  },
+  {
+    "sId": "03",
+    "venueName": "KFC Curepipe",
+    "phone": "123-456-7803",
+    "email": "curepipe@kfc.com",
+    "address": "8 Volcanic Lane, Curepipe.",
+    "bio": "Nestled in the highlands, famous for its tea and chicken combo."
+  },
+  {
+    "sId": "04",
+    "venueName": "KFC Quatre Bornes",
+    "phone": "123-456-7804",
+    "email": "quatrebornes@kfc.com",
+    "address": "15 St Jean Avenue, Quatre Bornes.",
+    "bio": "Urban dining with a variety of KFC specials."
+  },
+  {
+    "sId": "05",
+    "venueName": "KFC Mahebourg",
+    "phone": "123-456-7805",
+    "email": "mahebourg@kfc.com",
+    "address": "30 Waterfront Drive, Mahebourg.",
+    "bio": "A coastal KFC outlet with fresh seafood-inspired sides."
+  },
+  {
+    "sId": "06",
+    "venueName": "KFC Flacq",
+    "phone": "123-456-7806",
+    "email": "flacq@kfc.com",
+    "address": "7 Market Street, Flacq.",
+    "bio": "Known for its vibrant market vibe and quick service."
+  },
+  {
+    "sId": "07",
+    "venueName": "KFC Goodlands",
+    "phone": "123-456-7807",
+    "email": "goodlands@kfc.com",
+    "address": "19 Royal Road, Goodlands.",
+    "bio": "A cozy spot offering authentic KFC flavors in northern Mauritius."
+  },
+  {
+    "sId": "08",
+    "venueName": "KFC Rose Hill",
+    "phone": "123-456-7808",
+    "email": "rosehill@kfc.com",
+    "address": "22 Boundary Lane, Rose Hill.",
+    "bio": "A busy urban location with a wide range of KFC menu items."
+  },
+  {
+    "sId": "09",
+    "venueName": "KFC Flic en Flac",
+    "phone": "123-456-7809",
+    "email": "flicenflac@kfc.com",
+    "address": "14 Beachfront Road, Flic en Flac.",
+    "bio": "Overlooking the beach, perfect for a relaxing meal."
+  },
+  {
+    "sId": "10",
+    "venueName": "KFC Ebene",
+    "phone": "123-456-7810",
+    "email": "ebene@kfc.com",
+    "address": "9 Cybercity Boulevard, Ebene.",
+    "bio": "Conveniently located in the business hub for quick bites."
+  },
+  {
+    "sId": "11",
+    "venueName": "KFC Triolet",
+    "phone": "123-456-7811",
+    "email": "triolet@kfc.com",
+    "address": "16 Main Road, Triolet.",
+    "bio": "A local favorite with a modern KFC twist."
+  },
+  {
+    "sId": "12",
+    "venueName": "KFC Black River",
+    "phone": "123-456-7812",
+    "email": "blackriver@kfc.com",
+    "address": "3 Riverview Lane, Black River.",
+    "bio": "Famous for its riverside ambiance and fast service."
+  },
+  {
+    "sId": "13",
+    "venueName": "KFC Souillac",
+    "phone": "123-456-7813",
+    "email": "souillac@kfc.com",
+    "address": "11 Coastal Square, Souillac.",
+    "bio": "A central hub for KFC lovers in a quaint southern town."
+  },
+  {
+    "sId": "14",
+    "venueName": "KFC Vacoas",
+    "phone": "123-456-7814",
+    "email": "vacoas@kfc.com",
+    "address": "20 Independence Street, Vacoas.",
+    "bio": "Offers a high-energy dining experience with great food."
+  },
+  {
+    "sId": "15",
+    "venueName": "KFC Phoenix",
+    "phone": "123-456-7815",
+    "email": "phoenix@kfc.com",
+    "address": "5 Mall Avenue, Phoenix.",
+    "bio": "Celebrating local vibes with a delicious KFC menu."
+  }
+]

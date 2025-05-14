@@ -1,0 +1,114 @@
+[
+  {
+    "si": "01",
+    "name": "John Doe",
+    "email": "abc@gmail.com",
+    "phone": "516) 831-1111",
+    "availableVote": 700
+  },
+  {
+    "si": "02",
+    "name": "Jane Smith",
+    "email": "jane.smith@email.com",
+    "phone": "415) 567-1234",
+    "availableVote": 650
+  },
+  {
+    "si": "03",
+    "name": "Michael Johnson",
+    "email": "michael.johnson@mail.com",
+    "phone": "212) 654-9876",
+    "availableVote": 800
+  },
+  {
+    "si": "04",
+    "name": "Emily Davis",
+    "email": "emily.davis@domain.com",
+    "phone": "305) 890-2345",
+    "availableVote": 720
+  },
+  {
+    "si": "05",
+    "name": "William Brown",
+    "email": "william.brown@website.com",
+    "phone": "202) 345-6789",
+    "availableVote": 760
+  },
+  {
+    "si": "06",
+    "name": "Olivia Martinez",
+    "email": "olivia.martinez@online.com",
+    "phone": "310) 452-8912",
+    "availableVote": 750
+  },
+  {
+    "si": "07",
+    "name": "Liam Wilson",
+    "email": "liam.wilson@email.net",
+    "phone": "505) 677-1112",
+    "availableVote": 680
+  },
+  {
+    "si": "08",
+    "name": "Sophia Moore",
+    "email": "sophia.moore@domain.net",
+    "phone": "404) 123-4567",
+    "availableVote": 700
+  },
+  {
+    "si": "09",
+    "name": "Benjamin Taylor",
+    "email": "benjamin.taylor@company.com",
+    "phone": "707) 234-5678",
+    "availableVote": 690
+  },
+  {
+    "si": "10",
+    "name": "Mia Anderson",
+    "email": "mia.anderson@info.com",
+    "phone": "202) 654-3210",
+    "availableVote": 710
+  },
+  {
+    "si": "11",
+    "name": "James Thomas",
+    "email": "james.thomas@website.org",
+    "phone": "303) 456-7890",
+    "availableVote": 740
+  },
+  {
+    "si": "12",
+    "name": "Avery Jackson",
+    "email": "avery.jackson@tech.com",
+    "phone": "505) 876-5432",
+    "availableVote": 765
+  },
+  {
+    "si": "13",
+    "name": "Charlotte White",
+    "email": "charlotte.white@mailbox.com",
+    "phone": "123) 789-1234",
+    "availableVote": 730
+  },
+  {
+    "si": "14",
+    "name": "Henry Harris",
+    "email": "henry.harris@service.com",
+    "phone": "409) 234-5679",
+    "availableVote": 680
+  },
+  {
+    "si": "15",
+    "name": "Amelia Clark",
+    "email": "amelia.clark@domain.org",
+    "phone": "212) 543-6789",
+    "availableVote": 700
+  },
+  {
+    "si": "16",
+    "name": "Ethan Lewis",
+    "email": "ethan.lewis@email.org",
+    "phone": "818) 999-1111",
+    "availableVote": 690
+  }
+]
