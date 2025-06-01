@@ -1,4 +1,4 @@
-import { Button, Form, Select } from "antd";
+import { Button, DatePicker, Form, Input, Select, TimePicker } from "antd";
 import { useState } from "react";
 
 //* Modal Table
@@ -37,12 +37,52 @@ const CreateVotingPage = () => {
           </div> */}
         </div>
       </div>
-      <Form className=" mt-10 " onFinish={onFinish}>
+      <Form
+        layout="vertical"
+        className=" mt-10 w-[95%] mx-auto"
+        onFinish={onFinish}
+      >
+        <Form.Item
+          label={<div className="text-lg font-medium"> Battle Time (min)</div>}
+          name="battle_duration_minutes"
+          className=" "
+        >
+          <Input placeholder="Battle duration minutes" />
+        </Form.Item>
+        <div className="flex justify-between gap-5">
+          <Form.Item
+            label={
+              <div className="text-lg font-medium"> Battle Start Date</div>
+            }
+            name="battle_date"
+            className=" w-full"
+          >
+            <DatePicker className="w-full" />
+          </Form.Item>
+          <Form.Item
+            label={
+              <div className="text-lg font-medium"> Battle Start Time</div>
+            }
+            name="battle_start_time"
+            className="w-full "
+          >
+            <TimePicker className="w-full" />
+          </Form.Item>
+        </div>
         <div className="flex justify-center">
-          <Form.Item name="candidate" className=" !w-[80%] ">
+          <Form.Item
+            label={
+              <div className="text-lg font-medium">
+                {" "}
+                Battle Participate candidate
+              </div>
+            }
+            name="candidate"
+            className=" !w-[100%] "
+          >
             <Select
               placeholder="Please select candidates"
-              className=" !w-full !h-[60px]"
+              className=" !w-full "
               // value={selectedItems}
               mode="multiple"
               tokenSeparators={[","]}
@@ -52,7 +92,7 @@ const CreateVotingPage = () => {
         </div>
         <div
           className=" flex justify-end
-        w-[90%]"
+        "
         >
           <Button
             htmlType="submit"
