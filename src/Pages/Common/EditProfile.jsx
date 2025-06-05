@@ -12,9 +12,9 @@ import "react-phone-input-2/lib/bootstrap.css";
 const EditProfile = () => {
   const navigate = useNavigate();
   const profileData = {
-    firstName: "Damien",
-    LastName: "NG TAT CHUNG",
-    email: "damienntc@yahoo.com",
+    firstName: "James ",
+    LastName: "Mitchell",
+    email: "user@yahoo.com",
     contactNumber: "+2305 123 4567",
     // dob: "10-10-1998",
   };

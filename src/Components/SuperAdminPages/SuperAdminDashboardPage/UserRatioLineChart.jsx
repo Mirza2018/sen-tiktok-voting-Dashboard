@@ -87,7 +87,7 @@ const UserRatioLineChart = () => {
           <XAxis dataKey="name" />
           <YAxis domain={[0, 1500]} />
           <Tooltip />
-{/* 
+          {/* 
           <Line
             type="monotone"
             dataKey="user"
@@ -101,7 +101,7 @@ const UserRatioLineChart = () => {
           <Line
             type="monotone"
             dataKey="user"
-            stroke="#de8c9d" // Teal for service users
+            stroke="#25F4EE" // Teal for service users
             strokeWidth={4}
             dot={{ r: 0 }} // Teal dots with white fill
             activeDot={{ r: 10 }}

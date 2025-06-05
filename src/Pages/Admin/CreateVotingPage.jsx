@@ -4,10 +4,17 @@ import { useState } from "react";
 //* Modal Table
 
 const CreateVotingPage = () => {
+  let date;
   //* Store Search Value
   const onFinish = (values) => {
-    console.log(values);
+    const converDate = new Date(values.battle_date);
+
+    console.log(converDate);
   };
+
+  const myDate = new Date()
+  console.log(myDate);
+  
 
   return (
     <div
@@ -17,7 +24,7 @@ const CreateVotingPage = () => {
       {/* Header  */}
       <div className="bg-secondary-color w-full p-4   rounded-tl-xl rounded-tr-xl">
         <div className=" w-[95%] mx-auto  flex items-center justify-between">
-          <p className="text-3xl text-primary-color font-semibold">
+          <p className="text-3xl text-primary-color font-semibold ">
             Create Voting battle
           </p>
           {/* <div className="flex gap-4 items-center">
@@ -37,6 +44,7 @@ const CreateVotingPage = () => {
           </div> */}
         </div>
       </div>
+
       <Form
         layout="vertical"
         className=" mt-10 w-[95%] mx-auto"
@@ -57,7 +65,11 @@ const CreateVotingPage = () => {
             name="battle_date"
             className=" w-full"
           >
-            <DatePicker className="w-full" />
+            <DatePicker
+              format="MMMM D, YYYY"
+              formTarget=""
+              className="w-full"
+            />
           </Form.Item>
           <Form.Item
             label={
@@ -96,7 +108,7 @@ const CreateVotingPage = () => {
         >
           <Button
             htmlType="submit"
-            className="px-5 py-6 !bg-green-500 !text-white text-xl"
+            className="px-5 py-6 !bg-secondary-color !text-white text-xl"
           >
             Create voting battle
           </Button>

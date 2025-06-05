@@ -4,7 +4,6 @@ import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
  
 //* Modal Table
-import AddEmployeesModel from "../../Components/SuperAdminPages/EmployeesPage/AddEmployeesModel";
 import AllEmployeesTable from "../../Components/SuperAdminPages/EmployeesPage/AllEmployeesTable";
 import BlockEmployeesModal from "../../Components/SuperAdminPages/EmployeesPage/BlockEmployeesModal";
 import ViewEmployeesModal from "../../Components/SuperAdminPages/EmployeesPage/ViewEmployeesModal";
@@ -101,8 +100,8 @@ const Employees = () => {
             >
               <Input
                 placeholder="Search User..."
-                value={searchText}
-                onChange={(e) => onSearch(e.target.value)}
+                // value={searchText}
+                // onChange={(e) => onSearch(e.target.value)}
                 className="text-primary-color font-semibold !border-primary-color !bg-transparent py-2 !rounded-full"
                 prefix={
                   <SearchOutlined className="text-primary-color font-bold text-lg mr-2" />
@@ -117,7 +116,7 @@ const Employees = () => {
       {/* Table  */}
       <div className="px-10 py-10">
         <AllEmployeesTable
-          data={filteredVenueData}
+          data={data}
           loading={loading}
           showVenueViewModal={showVenueViewModal}
           showVenueBlockModal={showVenueBlockModal}

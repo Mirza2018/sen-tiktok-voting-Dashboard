@@ -9,51 +9,53 @@ export const mainTheme = {
 
       itemColor: "#727272",
 
-      itemSelectedBg: "#de8c9d",
+      itemSelectedBg: "#25F4EE",
       itemSelectedColor: "black",
 
-      // itemActiveBg: "#de8c9d",
-      // itemActiveColor: "#de8c9d",
-      // itemHoverColor: "#de8c9d",
+      // itemActiveBg: "#25F4EE",
+      // itemActiveColor: "#25F4EE",
+      // itemHoverColor: "#25F4EE",
     },
     Form: {
       colorError: "#F5382C",
     },
     Input: {
-      colorIcon: "#de8c9d",
-      colorBorder: "#de8c9d",
-      activeBorderColor: "#de8c9d",
+      colorIcon: "#25F4EE",
+      colorBorder: "#25F4EE",
+      activeBorderColor: "#25F4EE",
+      // lineHeight: 3,
     },
     Checkbox: {
-      colorPrimary: "#de8c9d",
-      colorPrimaryHover: "#de8c9d",
+      colorPrimary: "#25F4EE",
+      colorPrimaryHover: "#25F4EE",
     },
     Select: {
       fontSize: 20,
       optionSelectedColor: "#FFFFFF",
-      optionSelectedBg: "#de8c9d",
+      optionSelectedBg: "#25F4EE",
 
       optionActiveColor: "#FFFFFF",
       colorBorder: "#000",
       colorBgElevated: "#FFFFFF",
-      selectorBg: "#E5FAE9",
+      selectorBg: "#FFFFFF",
       colorText: "#000000",
-      colorTextPlaceholder: "#de8c9d",
-      colorBgContainer: "#de8c9d",
-      colorTextPlaceholder: "#ACBBAF",
+      colorTextPlaceholder: "#25F4EE",
+      colorBgContainer: "#25F4EE",
+
+      // colorTextPlaceholder: "#ACBBAF",
 
       zIndexPopup: 990,
     },
     DatePicker: {
       fontSize: 20,
-      colorBorder: "#de8c9d",
-      colorTextPlaceholder: "#de8c9d",
+      colorBorder: "#25F4EE",
+      colorTextPlaceholder: "#25F4EE",
     },
     Upload: {
       colorFillAlter: "rgba(0,0,0,0)",
-      colorBorder: "#de8c9d",
-      colorBorderHover: "#de8c9d",
-      colorText: "#de8c9d",
+      colorBorder: "#25F4EE",
+      colorBorderHover: "#25F4EE",
+      colorText: "#25F4EE",
     },
     Table: {
       headerBg: "rgb(253,253,253)",
@@ -61,7 +63,7 @@ export const mainTheme = {
       rowHoverBg: "#E5FAE9",
       borderColor: "rgb(253,253,253)",
 
-      // headerBg: "#de8c9d",
+      // headerBg: "#25F4EE",
       colorBgContainer: "#FDFDFD",
       colorText: "#0C0C0C",
       // borderColor: "#DFE1E3",
@@ -73,15 +75,15 @@ export const mainTheme = {
       // headerSplitColor: "#0C0C0C",
     },
     Pagination: {
-      itemActiveBg: "#de8c9d",
+      itemActiveBg: "#25F4EE",
       colorPrimary: "#FFFFFF",
       colorPrimaryHover: "#FFFFFF",
     },
 
     Switch: {
-      colorPrimary: "#de8c9d",
-      colorPrimaryBorder: "#de8c9d",
-      colorPrimaryHover: "#de8c9d",
+      colorPrimary: "#25F4EE",
+      colorPrimaryBorder: "#25F4EE",
+      colorPrimaryHover: "#25F4EE",
     },
   },
 };
