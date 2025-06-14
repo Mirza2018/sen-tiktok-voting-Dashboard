@@ -94,7 +94,7 @@ const SettingsChangePassword = () => {
             </Form.Item>
             <div className=" text-end">
               <Link
-                to={`/${user?.role}/settings/forgot-password`}
+                to={`/admin/settings/forgot-password`}
                 className="!text-secondary-color text-lg !underline"
               >
                 Forgot Password?

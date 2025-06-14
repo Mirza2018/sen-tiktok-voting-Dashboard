@@ -66,7 +66,7 @@ const Topbar = ({ collapsed, setCollapsed }) => {
         </div>
       ))}
       <Link
-        to={`/${user?.role}/notifications`}
+        to={`/admin/notifications`}
         className="px-16 !text-black mx-auto bg-secondary-color  rounded-2xl h-8 py-1 font-semibold"
       >
         See All

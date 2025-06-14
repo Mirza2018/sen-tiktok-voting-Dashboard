@@ -25,7 +25,7 @@ const Profile = () => {
           Profile Information
         </p>
         <Link
-          to={`/${user?.role}/edit-profile`}
+          to={`/admin/edit-profile`}
           className="hover:text-primary-color ml-auto "
         >
           <div className="mt-10 bg-secondary-color px-5 py-3 rounded-lg">

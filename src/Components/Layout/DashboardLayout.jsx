@@ -4,6 +4,7 @@ import {
   Outlet,
   ScrollRestoration,
   useLocation,
+  useNavigate,
 } from "react-router-dom";
 import { Layout, Menu, Typography } from "antd";
 import Sider from "antd/es/layout/Sider";
@@ -12,9 +13,12 @@ import { useEffect, useState } from "react";
 import Topbar from "../Shared/Topbar";
 import { AllIcons, AllImages } from "../../../public/images/AllImages";
 import TopLoadingBar from "react-top-loading-bar";
+import { useDispatch } from "react-redux";
 
 const DashboardLayout = () => {
-  const userRole = JSON.parse(localStorage.getItem("home_care_user"));
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const location = useLocation();
   const pathSegment = location.pathname.split("/").pop();
   const currentPath = location.pathname;
@@ -236,8 +240,7 @@ const DashboardLayout = () => {
     },
   ];
 
-  const menuItems =
-    userRole?.role === "admin" ? adminMenuItems : companyMenuItems; // Ensure companyMenuItems is defined
+  const menuItems = adminMenuItems  // Ensure companyMenuItems is defined
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {

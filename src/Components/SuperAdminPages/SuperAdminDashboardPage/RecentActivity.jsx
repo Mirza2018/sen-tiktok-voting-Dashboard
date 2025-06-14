@@ -110,7 +110,7 @@ const RecentActivity = () => {
         <h1 className="text-xl font-semibold text-input-color">
           Recent Activity
         </h1>
-        <Link to={`/${user?.role}/notifications`}>
+        <Link to={`/admin/notifications`}>
           {/* <Link to={`/notifications`}> */}
           <p className="cursor-pointer text-[#8A8D8E]  ">View all</p>
         </Link>

@@ -209,7 +209,7 @@ const CompanyDashboard = () => {
           >
             <div className="flex justify-between items-center sticky top-0 p-5 bg-white z-10">
               <h1 className="text-xl font-semibold">Recent Activity</h1>
-              <Link to={`/${user?.role}/notifications`}>
+              <Link to={`/admin/notifications`}>
                 <p className="cursor-pointer text-[#898c8d] underline ">
                   View all
                 </p>

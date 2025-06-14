@@ -8,8 +8,33 @@ import DeleteCandidateModal from "../../Components/SuperAdminPages/VotingCandida
 import ViewCandidateModal from "../../Components/SuperAdminPages/VotingCandidatePage/ViewCandidateModal";
 import VoatingCandidateTable from "../../Components/SuperAdminPages/VotingCandidatePage/VoatingCandidateTable";
 import AddCandidateModal from "../../Components/SuperAdminPages/VotingCandidatePage/AddCandidateModal";
+import { useCandidateListQuery } from "../../redux/api/adminApi";
 
 const VotingCandidatePage = () => {
+  const [filters, setFilters] = useState({
+    page: 1,
+    limit: 8,
+  });
+
+  const onPageChange = (page, limit) => {
+    setFilters((prev) => ({
+      ...prev,
+      page,
+      limit,
+    }));
+  };
+
+  const {
+    data: candidate,
+    currentData,
+    isLoading,
+    isFetching,
+    isSuccess,
+  } = useCandidateListQuery();
+
+  const displayedData = candidate ?? currentData;
+  // console.log(displayedData);
+
   //* Store Search Value
   const [searchText, setSearchText] = useState("");
 
@@ -117,11 +142,13 @@ const VotingCandidatePage = () => {
       {/* Table  */}
       <div className="px-10 py-10">
         <VoatingCandidateTable
-          data={filteredVenueData}
-          loading={loading}
+          data={displayedData?.data}
+          loading={isLoading}
           showVenueViewModal={showVenueViewModal}
           showVenueBlockModal={showVenueBlockModal}
           pageSize={8}
+          meta={displayedData?.data?.meta}
+          onPageChange={onPageChange}
         />
       </div>
 

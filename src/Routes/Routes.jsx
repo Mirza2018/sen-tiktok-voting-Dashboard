@@ -16,7 +16,6 @@ import UpdatePassword from "../Pages/Auth/UpdatePassword";
 import Notifications from "../Components/Dashboard/Notifications";
 import EditProfile from "../Pages/Common/EditProfile";
 import Profile from "../Pages/Common/Profile";
-import PrivacyPolicy from "../Pages/Common/settings/PrivacyPolicy";
 import SettingsChangePassword from "../Pages/Common/settings/SettingsChangePassword";
 import SettingsForgotPassword from "../Pages/Common/settings/SettingsForgotPassword";
 import SettingsOtpPage from "../Pages/Common/settings/SettingsOtpPage";
@@ -29,10 +28,15 @@ import TermsOfService from "../Pages/Common/settings/TermsOfService";
 import Loading from "../Components/UI/Loading";
 import AdminAllFeedBack from "../Pages/Admin/AllFeedback";
 
+import FAQ from "../Components/Dashboard/FAQ/FAQ";
 import DriverRequestAccept from "../Components/SuperAdminPages/DriverRequestPage/DriverRequestAccept";
 import DriverSeeDetails from "../Components/SuperAdminPages/DriverRequestPage/DriverSeeDetails";
+import CreateVotingPage from "../Pages/Admin/CreateVotingPage";
 import NotificationsPage from "../Pages/Admin/NotificationsPage";
 import SettingsPage from "../Pages/Admin/SettingsPage";
+import VotingCandidatePage from "../Pages/Admin/VotingCandidatePage";
+import CustomerService from "../Pages/Common/settings/CustomerService";
+import Safely from "../Pages/Common/settings/Safely";
 import AllDriver from "../Pages/SuperAdmin/AllDriver";
 import DriverRequest from "../Pages/SuperAdmin/DriverRequest";
 import EarningsPage from "../Pages/SuperAdmin/EarningsPage";
@@ -40,22 +44,12 @@ import Employees from "../Pages/SuperAdmin/Employees";
 import Offers from "../Pages/SuperAdmin/Offers";
 import Passengers from "../Pages/SuperAdmin/Passengers";
 import SuperAdminDashboard from "../Pages/SuperAdmin/SuperAdminDashboard";
-import FAQ from "../Components/Dashboard/FAQ/FAQ";
-import Safely from "../Pages/Common/settings/Safely";
-import CustomerService from "../Pages/Common/settings/CustomerService";
-import VotingCandidatePage from "../Pages/Admin/VotingCandidatePage";
-import CreateVotingPage from "../Pages/Admin/CreateVotingPage";
 
 function AuthRedirect() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("home_care_user"));
-    if (user && user.role) {
-      navigate(`/${user.role}/dashboard`, { replace: true });
-    } else {
-      navigate("/signin", { replace: true });
-    }
+    navigate(`/admin/dashboard`, { replace: true });
   }, [navigate]);
 
   // Optionally display a loading indicator
@@ -81,10 +75,6 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
     children: [
-      // {
-      //   path: "dashboard",
-      //   element: <AdminDashboard />,
-      // },
       {
         path: "dashboard",
         element: <SuperAdminDashboard />,

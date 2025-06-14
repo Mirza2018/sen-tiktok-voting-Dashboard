@@ -11,6 +11,7 @@ import {
   Upload,
 } from "antd";
 import { AllImages } from "../../../../public/images/AllImages";
+import { toast } from "sonner";
 
 const { TextArea } = Input;
 
@@ -20,10 +21,45 @@ const AddCandidatesFrom = ({
 }) => {
   const [form] = Form.useForm();
   const { Dragger } = Upload;
+
   const onFinish = (values) => {
     console.log("Service User:", values);
-    form.resetFields();
-    setIsAddCompanyModalVisible(false);
+    const toastId = toast.loading("Car is Listing...", {
+      duration: 2000,
+    });
+    let data = { ...values };
+    delete data.profileImage;
+    delete data.backgroundImage;
+    const formData = new FormData();
+    formData.append("data", JSON.stringify(data));
+    formData.append(
+      "profileImage",
+      values.profileImage.fileList[0].originFileObj
+    );
+    formData.append(
+      "backgroundImage",
+      values.backgroundImage.fileList[0].originFileObj
+    );
+
+    console.log(values.profileImage.fileList[0].originFileObj);
+    console.log(values.backgroundImage.fileList[0].originFileObj);
+
+    try {
+      // const res = await saleData(formData).unwrap();
+      // console.log("API Response:", res);
+      // toast.success("Car listing is successfully done", {
+      //   id: toastId,
+      //   duration: 2000,
+      // });
+      form.resetFields();
+      setIsAddCompanyModalVisible(false);
+    } catch (error) {
+      // console.error("Error submitting to cardetails API:", error);
+      //   toast.error("This car is already Listed", {
+      //     id: toastId,
+      //     duration: 2000,
+      //   });
+    }
   };
 
   return (
@@ -62,7 +98,7 @@ const AddCandidatesFrom = ({
                   message: "Please Enter Candidate Name",
                 },
               ]}
-              name="candidateName"
+              name="name"
               className=" "
             >
               <Input
@@ -110,7 +146,7 @@ const AddCandidatesFrom = ({
                   message: "Please Enter Candidate Background Image",
                 },
               ]}
-              name="profileImage"
+              name="backgroundImage"
               className=" "
             >
               <Dragger name="files" maxCount={1} action={false}>
@@ -133,7 +169,7 @@ const AddCandidatesFrom = ({
                   message: "Please Enter Candidate TikTok Link",
                 },
               ]}
-              name="tiktokLink"
+              name="tikTokLink"
               className=" "
             >
               <Input

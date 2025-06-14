@@ -4,7 +4,7 @@ import { GoEye } from "react-icons/go";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { Person } from "../../../../public/images/AllImages";
 import { BiEdit } from "react-icons/bi";
-
+import { getImageUrl } from "../../../redux/getBaseUrl";
 
 const VoatingCandidateTable = ({
   data,
@@ -12,6 +12,8 @@ const VoatingCandidateTable = ({
   showVenueViewModal,
   showVenueBlockModal,
   pageSize = 0,
+  meta,
+  onPageChange,
 }) => {
   const columns = [
     {
@@ -22,16 +24,17 @@ const VoatingCandidateTable = ({
     },
     {
       title: "Name",
-      dataIndex: "candidateName",
-      key: "candidateName",
-      render: (text) => (
+      dataIndex: "name",
+      key: "name",
+      render: (_, record) => (
         <div className="flex items-center gap-2">
           <img
-            src={Person.samplePerson}
-            alt={text}
+            src={getImageUrl() + record?.profileImage}
+            alt={record?.name}
             className="w-8 h-8 rounded-full"
           />
-          <p>{text}</p>
+          <p>{record?.name}</p>
+          {/* {console.log(getImageUrl() + record?.profileImage)} */}
         </div>
       ),
     },
@@ -43,8 +46,8 @@ const VoatingCandidateTable = ({
     },
     {
       title: "Account Link",
-      dataIndex: "tiktokLink",
-      key: "tiktokLink",
+      dataIndex: "tikTokLink",
+      key: "tikTokLink",
     },
     {
       title: "Bio",
@@ -112,7 +115,13 @@ const VoatingCandidateTable = ({
         columns={columns}
         dataSource={data}
         loading={loading}
-        pagination={pageSize > 0 ? { pageSize } : false}
+        pagination={{
+          current: meta?.page,
+          pageSize: meta?.limit,
+          total: meta?.total,
+          onChange: onPageChange,
+          showSizeChanger: true,
+        }}
         rowKey="id"
         scroll={{ x: true }}
       />
