@@ -23,11 +23,11 @@ th {
 }
 
 .ant-menu-submenu-selected .ant-menu-submenu-title {
-  background-color: #25F4EE !important;
+  background-color: #25f4ee !important;
 }
 .ant-menu-submenu-selected .ant-menu-item-selected {
   background-color: transparent !important;
-  color: #25F4EE !important;
+  color: #25f4ee !important;
 }
 
 ::-webkit-scrollbar {
@@ -35,7 +35,7 @@ th {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #25F4EE, #25F4EE);
+  background: linear-gradient(45deg, #25f4ee, #25f4ee);
   margin-left: 2px;
   margin-right: 2px;
   border-radius: 10px;
@@ -48,10 +48,14 @@ th {
 ::-moz-selection {
   /* Code for Firefox */
   color: #ffffff;
-  background: #25F4EE;
+  background: #25f4ee;
 }
 
 ::selection {
   color: #ffffff;
-  background: #25F4EE;
+  background: #25f4ee;
+}
+
+.search-box {
+  color: black;
 }

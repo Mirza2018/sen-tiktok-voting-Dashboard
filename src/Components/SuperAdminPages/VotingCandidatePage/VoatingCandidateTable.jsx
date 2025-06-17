@@ -11,7 +11,7 @@ const VoatingCandidateTable = ({
   loading,
   showVenueViewModal,
   showVenueBlockModal,
-  pageSize = 0,
+  showEditModal,
   meta,
   onPageChange,
 }) => {
@@ -71,7 +71,7 @@ const VoatingCandidateTable = ({
                   border: "none",
                   color: "#C50000",
                 }}
-                onClick={() => showVenueBlockModal(record)}
+                onClick={() => showEditModal(record)}
               >
                 <BiEdit style={{ fontSize: "28px" }} />
               </Button>

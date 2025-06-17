@@ -5,29 +5,21 @@ export const profileApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getProfile: build.query({
       query: () => ({
-        url: `/users/admin-profile`,
-        method: "Get",
+        url: `/users/my_profile`,
+        method: "GET",
       }),
-
+      providesTags: [tagTypes.profile],
     }),
 
-    profileUpdsate: build.mutation({
+    profileUpdate: build.mutation({
       query: (profile) => ({
-        url: `/users/update-my-profile`,
+        url: `/users/update_profile`,
         method: "PATCH",
         body: profile,
       }),
-
-    }),
-
-    userRatio: build.query({
-      query: (year) => ({
-        url: `/users/all-users-overview?year=${year}`,
-        method: "GET",
-      }),
-  
+      invalidatesTags: [tagTypes.profile],
     }),
   }),
 });
 
-export const { useGetProfileQuery, useProfileUpdsateMutation, useUserRatioQuery } = profileApi;
+export const { useGetProfileQuery, useProfileUpdateMutation } = profileApi;

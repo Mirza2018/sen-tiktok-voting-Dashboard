@@ -9,6 +9,7 @@ import ViewCandidateModal from "../../Components/SuperAdminPages/VotingCandidate
 import VoatingCandidateTable from "../../Components/SuperAdminPages/VotingCandidatePage/VoatingCandidateTable";
 import AddCandidateModal from "../../Components/SuperAdminPages/VotingCandidatePage/AddCandidateModal";
 import { useCandidateListQuery } from "../../redux/api/adminApi";
+import EditCandidateModal from "../../Components/SuperAdminPages/VotingCandidatePage/EditCandidateModal";
 
 const VotingCandidatePage = () => {
   const [filters, setFilters] = useState({
@@ -30,7 +31,7 @@ const VotingCandidatePage = () => {
     isLoading,
     isFetching,
     isSuccess,
-  } = useCandidateListQuery();
+  } = useCandidateListQuery(filters);
 
   const displayedData = candidate ?? currentData;
   // console.log(displayedData);
@@ -49,6 +50,7 @@ const VotingCandidatePage = () => {
   //* It's Use to Block Modal
   const [isVenueBlockModalVisible, setIsVenueBlockModalVisible] =
     useState(false);
+  const [isEditCandidate, setIsEditCandidate] = useState(false);
 
   //* It's Use to Add Modal
   const [isAddVenueModalVisible, setIsAddVenueModalVisible] = useState(false);
@@ -94,6 +96,10 @@ const VotingCandidatePage = () => {
   const showVenueBlockModal = (record) => {
     setCurrentVenueRecord(record);
     setIsVenueBlockModalVisible(true);
+  };
+  const showEditModal = (record) => {
+    setCurrentVenueRecord(record);
+    setIsEditCandidate(true);
   };
 
   const handleCancel = () => {
@@ -146,8 +152,9 @@ const VotingCandidatePage = () => {
           loading={isLoading}
           showVenueViewModal={showVenueViewModal}
           showVenueBlockModal={showVenueBlockModal}
+          showEditModal={showEditModal}
           pageSize={8}
-          meta={displayedData?.data?.meta}
+          meta={displayedData?.meta}
           onPageChange={onPageChange}
         />
       </div>
@@ -162,6 +169,12 @@ const VotingCandidatePage = () => {
       <DeleteCandidateModal
         isVenueBlockModalVisible={isVenueBlockModalVisible}
         handleVenueBlock={handleVenueBlock}
+        handleCancel={handleCancel}
+        currentVenueRecord={currentVenueRecord}
+      />
+      <EditCandidateModal
+        isEditCandidate={isEditCandidate}
+        setIsEditCandidate={setIsEditCandidate}
         handleCancel={handleCancel}
         currentVenueRecord={currentVenueRecord}
       />

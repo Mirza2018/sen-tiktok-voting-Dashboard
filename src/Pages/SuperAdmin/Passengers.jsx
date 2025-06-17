@@ -10,13 +10,14 @@ import { IoMdAddCircleOutline } from "react-icons/io";
 import AllPassengersTable from "../../Components/SuperAdminPages/PassengersPage/AllPassengersTable";
 import ViewPassengersModal from "../../Components/SuperAdminPages/PassengersPage/ViewPassengersModal";
 import BlockPassengersModal from "../../Components/SuperAdminPages/PassengersPage/BlockPassengersModal";
+import { useVotingResultQuery } from "../../redux/api/adminApi";
 
 const Passengers = () => {
   //* Store Search Value
   const [searchText, setSearchText] = useState("");
 
   //* Use to set user
-  const [data, setData] = useState([]);
+  const { data, isLoading } = useVotingResultQuery();
 
   const [loading, setLoading] = useState(true);
 
@@ -27,35 +28,13 @@ const Passengers = () => {
   //* It's Use to Block Modal
   const [isCompanyBlockModalVisible, setIsCompanyBlockModalVisible] =
     useState(false);
- 
+
   //* It's Use to Add Modal
   const [isAddCompanyModalVisible, setIsAddCompanyModalVisible] =
     useState(false);
 
   //* It's Use to Set Seclected User to Block and view
   const [currentCompanyRecord, setCurrentCompanyRecord] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/data/votingResult.json");
-        setData(response?.data); // Make sure this is an array
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const filteredCompanyData = useMemo(() => {
-    if (!searchText) return data;
-    return data.filter((item) =>
-      item.name.toLowerCase().includes(searchText.toLowerCase())
-    );
-  }, [data, searchText]);
 
   const onSearch = (value) => {
     setSearchText(value);
@@ -98,9 +77,7 @@ const Passengers = () => {
       {/* Header  */}
       <div className="bg-secondary-color w-full p-4   rounded-tl-xl rounded-tr-xl">
         <div className=" w-[95%] mx-auto  flex items-center justify-between">
-          <p className="text-3xl  font-semibold">
-            Voting List
-          </p>
+          <p className="text-3xl  font-semibold">Voting List</p>
           {/* <div className="flex gap-4 items-center">
             <ConfigProvider
               theme={{ token: { colorTextPlaceholder: "#f3f3f3" } }}
@@ -119,35 +96,23 @@ const Passengers = () => {
         </div>
       </div>
 
-
       {/* Table  */}
       <div className="px-10 py-10">
         <AllPassengersTable
-          data={filteredCompanyData}
-          loading={loading}
+          data={data?.data?.result}
+          loading={isLoading}
           showCompanyViewModal={showCompanyViewModal}
           showCompanyBlockModal={showCompanyBlockModal}
           pageSize={12}
         />
       </div>
 
-      {/* Modals */}
-      {/* <AddCompanyModal
-        isAddCompanyModalVisible={isAddCompanyModalVisible}
-        handleCancel={handleCancel}
-      /> */}
       <ViewPassengersModal
         isCompanyViewModalVisible={isCompanyViewModalVisible}
         handleCancel={handleCancel}
         currentCompanyRecord={currentCompanyRecord}
         handleCompanyBlock={handleCompanyBlock}
       />
-      {/* <BlockPassengersModal
-        isCompanyBlockModalVisible={isCompanyBlockModalVisible}
-        handleCompanyBlock={handleCompanyBlock}
-        handleCancel={handleCancel}
-        currentCompanyRecord={currentCompanyRecord}
-      /> */}
     </div>
   );
 };

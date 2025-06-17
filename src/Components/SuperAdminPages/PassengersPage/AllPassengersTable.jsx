@@ -3,6 +3,7 @@ import { Button, Space, Table, Tooltip } from "antd";
 import { GoEye } from "react-icons/go";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { AllImages, Person } from "../../../../public/images/AllImages";
+import dayjs from "dayjs";
 
 const AllPassengersTable = ({
   data,
@@ -11,45 +12,62 @@ const AllPassengersTable = ({
   showCompanyBlockModal,
   pageSize = 0,
 }) => {
+  console.log(data);
+
+  const dateFunction = (date) => {
+
+    let inputDate = new Date(date)
+    if (isNaN(inputDate)) {
+      return "Invalid date";
+    }
+    return inputDate.toDateString();
+  };
+
   const columns = [
+    // {
+    //   title: "Name",
+    //   dataIndex: "name",
+    //   key: "name",
+    //   render: (text) => (
+    //     <div className="flex items-center gap-2">
+    //       <img
+    //         src={Person.samplePerson}
+    //         alt={text}
+    //         className="w-8 h-8 rounded-full"
+    //       />
+    //       <p>{text}</p>
+    //     </div>
+    //   ),
+    // },
+    // {
+    //   title: "#SI",
+    //   dataIndex: "id",
+    //   key: "id",
+    //   responsive: ["md"],
+    // },
     {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
+      title: "Battle Date",
+      dataIndex: "battleStartDate",
+      key: "battleStartDate",
       render: (text) => (
         <div className="flex items-center gap-2">
-          <img
-            src={Person.samplePerson}
-            alt={text}
-            className="w-8 h-8 rounded-full"
-          />
-          <p>{text}</p>
+          <p>{dateFunction(text)}</p>
         </div>
       ),
     },
-    {
-      title: "#SI",
-      dataIndex: "id",
-      key: "id",
-      responsive: ["md"],
-    },
-    {
-      title: "Date",
-      dataIndex: "date",
-      key: "date",
-    },
+
     {
       title: "Result",
-      dataIndex: "result",
-      key: "result",
+      dataIndex: "status",
+      key: "status",
       render: (text) => (
         <div className="flex items-center gap-2">
           <p
             className={`font-medium  px-2 rounded-md ${
-              text == "complete" ? "bg-green-400" : "bg-yellow-400"
+              text == "ongoing" ? " bg-yellow-400" : "bg-green-400"
             }`}
           >
-            {text == "complete" ? "complete" : "pending"}
+            {text == "ongoing" ? "ongoing" : "Complete"}
           </p>
         </div>
       ),

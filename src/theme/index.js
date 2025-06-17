@@ -33,7 +33,7 @@ export const mainTheme = {
       fontSize: 20,
       optionSelectedColor: "#FFFFFF",
       optionSelectedBg: "#25F4EE",
-
+      multipleItemHeight: 35,
       optionActiveColor: "#FFFFFF",
       colorBorder: "#000",
       colorBgElevated: "#FFFFFF",
@@ -41,7 +41,7 @@ export const mainTheme = {
       colorText: "#000000",
       colorTextPlaceholder: "#25F4EE",
       colorBgContainer: "#25F4EE",
-
+      colorBorder: "#25F4EE",
       // colorTextPlaceholder: "#ACBBAF",
 
       zIndexPopup: 990,
