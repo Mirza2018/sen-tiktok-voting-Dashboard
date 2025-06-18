@@ -13,11 +13,17 @@ import BlockPassengersModal from "../../Components/SuperAdminPages/PassengersPag
 import { useVotingResultQuery } from "../../redux/api/adminApi";
 
 const Passengers = () => {
+  const { data, isLoading } = useVotingResultQuery();
   //* Store Search Value
+
+// console.log(data);
+
+
+
+
   const [searchText, setSearchText] = useState("");
 
   //* Use to set user
-  const { data, isLoading } = useVotingResultQuery();
 
   const [loading, setLoading] = useState(true);
 
@@ -99,7 +105,7 @@ const Passengers = () => {
       {/* Table  */}
       <div className="px-10 py-10">
         <AllPassengersTable
-          data={data?.data?.result}
+          data={data?.data}
           loading={isLoading}
           showCompanyViewModal={showCompanyViewModal}
           showCompanyBlockModal={showCompanyBlockModal}

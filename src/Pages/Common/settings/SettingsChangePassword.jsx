@@ -1,13 +1,37 @@
 import { Button, Form, Input, Typography } from "antd";
 import { IoChevronBackOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
- 
+import { Link, useNavigate } from "react-router-dom";
+import { useChangePasswordMutation } from "../../../redux/api/authApi";
+import { toast } from "sonner";
+
 const SettingsChangePassword = () => {
-  const user = JSON.parse(localStorage.getItem("home_care_user"));
-  const onFinish = (values) => {
+  const [changePass] = useChangePasswordMutation();
+  const [form] = Form.useForm();
+  const navigate = useNavigate();
+  const onFinish = async (values) => {
     console.log("Success:", values);
-    localStorage.removeItem("home_care_user");
-    window.location.reload();
+
+    const toastId = toast.loading("Password is changing...");
+
+    try {
+      const res = await changePass(values).unwrap();
+      console.log(res);
+      toast.success(res?.message || "Password is change successfully", {
+        id: toastId,
+        duration: 2000,
+      });
+      form.resetFields();
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      toast.error(
+        error?.data?.message || "There is an problem changeing problem",
+        {
+          id: toastId,
+          duration: 2000,
+        }
+      );
+    }
   };
   return (
     <div
@@ -16,18 +40,13 @@ const SettingsChangePassword = () => {
     >
       <div className="bg-secondary-color  w-full p-5 mb-10  rounded-tl-xl rounded-tr-xl">
         <div className=" w-[95%] mx-auto  flex items-center ">
-          <p className="text-2xl  font-semibold flex ">
-            {/* <IoChevronBackOutline
-              className="text-4xl cursor-pointer  font-semibold"
-              onClick={() => window.history.back()}
-            /> */}
-            Change Password
-          </p>
+          <p className="text-2xl  font-semibold flex ">Change Password</p>
         </div>
       </div>
       <div className="md:p-14 lg:p-20 flex justify-center items-center">
         <div className="w-full">
           <Form
+            form={form}
             onFinish={onFinish}
             layout="vertical"
             className="bg-transparent w-full"
@@ -42,7 +61,7 @@ const SettingsChangePassword = () => {
                   message: "Please enter your current password!",
                 },
               ]}
-              name="currentPassword"
+              name="oldPassword"
               className="text-white "
             >
               <Input.Password
@@ -69,7 +88,7 @@ const SettingsChangePassword = () => {
               Re-enter new Password
             </Typography.Title>
             <Form.Item
-              name="reEnterPassword"
+              name="confirmPassword"
               className="text-white"
               rules={[
                 { required: true, message: "Please confirm your password!" },

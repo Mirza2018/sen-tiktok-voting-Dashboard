@@ -13,7 +13,7 @@ const AllPassengersTable = ({
   showCompanyBlockModal,
   pageSize = 0,
 }) => {
-  console.log(data);
+  // console.log(data);
 
   const dateFunction = (date) => {
     let inputDate = new Date(date);
@@ -82,7 +82,7 @@ const AllPassengersTable = ({
                   border: "none",
                   color: "#25F4EE",
                 }}
-                onClick={() => showCompanyViewModal(record?.battleId)}
+                onClick={() => showCompanyViewModal(record?.participates)}
               >
                 <GoEye style={{ fontSize: "24px" }} />
               </Button>

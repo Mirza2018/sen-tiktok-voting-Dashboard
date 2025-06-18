@@ -14,6 +14,18 @@ export const authApi = baseApi.injectEndpoints({
       invalidatesTags: [tagTypes.user],
     }),
 
+    //Password Change
+    changePassword: build.mutation({
+      query: (changePassword) => {
+        return {
+          url: `/auth/change_password`,
+          method: "POST",
+          body: changePassword,
+        };
+      },
+      // invalidatesTags: [tagTypes.user],
+    }),
+
     signUp: build.mutation({
       query: (signupData) => ({
         url: `/auth/register`,
@@ -67,26 +79,8 @@ export const authApi = baseApi.injectEndpoints({
       invalidatesTags: [tagTypes.user],
     }),
 
-    resetPassword: build.mutation({
-      query: (resetData) => {
-        return {
-          url: `/auth/reset_password`,
-          method: "POST",
-          body: resetData,
-        };
-      },
-      invalidatesTags: [tagTypes.user],
-    }),
     //end
   }),
 });
 
-export const {
-  useUserLoginMutation,
-  useSignUpMutation,
-  useVerifiedEmailMutation,
-  useResendOTPMutation,
-  useForgetPasswordMutation,
-  useForgetOtpVerifyMutation,
-  useResetPasswordMutation,
-} = authApi;
+export const { useUserLoginMutation, useChangePasswordMutation } = authApi;

@@ -26,6 +26,7 @@ const ViewPassengersModal = ({
   //     }
   //   }, [currentCompanyRecord, fetchVotingResult]);
 
+console.log(currentCompanyRecord);
 
   return (
     <Modal
