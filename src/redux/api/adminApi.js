@@ -68,6 +68,13 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.vote],
     }),
+    singleVotingResult: build.query({
+      query: (id) => ({
+        url: `/voting/details/${id}`,
+        method: "GET",
+      }),
+      // providesTags: [tagTypes.vote],
+    }),
     //end
   }),
 });
@@ -79,4 +86,5 @@ export const {
   useCandidateDeleteMutation,
   useVoteCreateMutation,
   useVotingResultQuery,
+  useLazySingleVotingResultQuery
 } = adminApi;
