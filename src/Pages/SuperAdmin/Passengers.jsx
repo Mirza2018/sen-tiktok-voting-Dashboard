@@ -105,7 +105,7 @@ const Passengers = () => {
       {/* Table  */}
       <div className="px-10 py-10">
         <AllPassengersTable
-          data={data?.data}
+          data={data?.data?.result}
           loading={isLoading}
           showCompanyViewModal={showCompanyViewModal}
           showCompanyBlockModal={showCompanyBlockModal}
