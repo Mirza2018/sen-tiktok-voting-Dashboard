@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Avatar, Button, Space, Table, Tooltip } from "antd";
 import { GoEye } from "react-icons/go";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { AllImages, Person } from "../../../../public/images/AllImages";
-import dayjs from "dayjs";
 import { getImageUrl } from "../../../redux/getBaseUrl";
+import { TbTrash } from "react-icons/tb";
 
-const AllPassengersTable = ({
+const AllUpcomeingVoteTable = ({
   data,
   loading,
   onPageChange,
@@ -36,39 +34,69 @@ const AllPassengersTable = ({
         </div>
       ),
     },
+    {
+      title: "Battle Start Time",
+      dataIndex: "battleStartTime",
+      key: "battleStartTime",
+      render: (text) => (
+        <div className="flex items-center gap-2">
+          <p>{text}</p>
+        </div>
+      ),
+    },
+    {
+      title: "Battle Duration",
+      dataIndex: "battleTime",
+      key: "battleTime",
+      render: (text) => (
+        <div className="flex items-center gap-2">
+          <p>{text}</p>
+        </div>
+      ),
+    },
 
+    // {
+    //   title: "Result",
+    //   dataIndex: "status",
+    //   key: "status",
+    //   render: (text) => (
+    //     <div className="flex items-center gap-2">
+    //       <p
+    //         className={`font-medium  px-2 rounded-md ${
+    //           text == "ongoing" ? " bg-yellow-400" : "bg-green-400"
+    //         }`}
+    //       >
+    //         {text == "ongoing" ? "ongoing" : "Complete"}
+    //       </p>
+    //     </div>
+    //   ),
+    // },
     {
-      title: "Result",
-      dataIndex: "status",
-      key: "status",
+      title: "Participates",
+      dataIndex: "participates",
+      key: "participates",
       render: (text) => (
-        <div className="flex items-center gap-2">
-          <p
-            className={`font-medium  px-2 rounded-md ${
-              text == "ongoing" ? " bg-yellow-400" : "bg-green-400"
-            }`}
-          >
-            {text == "ongoing" ? "ongoing" : "Complete"}
-          </p>
+        <div>
+          {/*  {
+              console.log(p?.candidateInfo?.name);
+            } */}
+          {text.map((p) => (
+            <div className="flex items-center gap-2 mt-2">
+              <Avatar
+                size={36}
+                src={getImageUrl() + p?.candidateInfo?.profileImage}
+              />
+              <p>{p?.candidateInfo?.name}</p>
+            </div>
+          ))}
         </div>
       ),
     },
-    {
-      title: "Winner",
-      dataIndex: "winner",
-      key: "winner",
-      render: (text) => (
-        <div className="flex items-center gap-2">
-          <Avatar size={36} src={getImageUrl() + text?.profileImage} />
-          <p>{text?.name}</p>
-        </div>
-      ),
-    },
-    {
-      title: "Winner Vote",
-      dataIndex: "winnerVotes",
-      key: "winnerVotes",
-    },
+    // {
+    //   title: "Winner Vote",
+    //   dataIndex: "winnerVotes",
+    //   key: "winnerVotes",
+    // },
     {
       title: "Action",
       key: "action",
@@ -78,15 +106,14 @@ const AllPassengersTable = ({
             {/* View Details Tooltip */}
             <Tooltip placement="right" title="View Details">
               <Button
-                className="!p-0"
+                className="!p-0 text-red-500"
                 style={{
                   background: "#FFFFFF",
                   border: "none",
-                  color: "#25F4EE",
                 }}
-                onClick={() => showCompanyViewModal(record?.battleId)}
+                onClick={() => showCompanyViewModal(record?._id)}
               >
-                <GoEye style={{ fontSize: "24px" }} />
+                <TbTrash style={{ fontSize: "24px" }} />
               </Button>
             </Tooltip>
           </Space>
@@ -114,4 +141,4 @@ const AllPassengersTable = ({
   );
 };
 
-export default AllPassengersTable;
+export default AllUpcomeingVoteTable;

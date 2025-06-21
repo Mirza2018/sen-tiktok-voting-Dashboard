@@ -4,7 +4,7 @@ import { EditOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa";
 import PhoneInput from "react-phone-input-2";
-import {
+import { 
   useGetProfileQuery,
   useProfileUpdateMutation,
 } from "../../redux/api/profileApi";

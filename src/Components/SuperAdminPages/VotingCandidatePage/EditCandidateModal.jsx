@@ -30,6 +30,8 @@ const EditCandidateModal = ({
       form.setFieldsValue({
         name: currentVenueRecord.name,
         tikTokLink: currentVenueRecord.tikTokLink,
+        instagramLink: currentVenueRecord.instagramLink,
+        facebookLink: currentVenueRecord.facebookLink,
         followers: currentVenueRecord.followers,
         bio: currentVenueRecord.bio,
         profileImage: currentVenueRecord.profileImage
@@ -209,6 +211,26 @@ const EditCandidateModal = ({
             >
               <Input
                 placeholder="Enter TikTok Link"
+                className="px-3 text-xl border !border-input-color !bg-transparent"
+              />
+            </Form.Item>
+
+            <Typography.Title level={4} style={{ color: "#222222" }}>
+              Instagram Link
+            </Typography.Title>
+            <Form.Item name="instagramLink">
+              <Input
+                placeholder="Enter instagram Link"
+                className="px-3 text-xl border !border-input-color !bg-transparent"
+              />
+            </Form.Item>
+
+            <Typography.Title level={4} style={{ color: "#222222" }}>
+              Facebook Link
+            </Typography.Title>
+            <Form.Item name="facebookLink">
+              <Input
+                placeholder="Enter facebook Link"
                 className="px-3 text-xl border !border-input-color !bg-transparent"
               />
             </Form.Item>

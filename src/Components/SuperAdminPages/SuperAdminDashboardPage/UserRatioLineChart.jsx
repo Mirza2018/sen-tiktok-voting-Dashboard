@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Line,
 } from "recharts";
+import { useUserOverviewQuery } from "../../../redux/api/adminApi";
 
 const data = [
   {
@@ -71,11 +72,16 @@ const data = [
   },
 ];
 const UserRatioLineChart = () => {
+    const { data, currentData, isLoading, isFetching, isSuccess } =
+      useUserOverviewQuery();
+  
+    const displayedData = data ?? currentData;
+    console.log(displayedData?.data);
   return (
     <div className="w-full h-96 p-5 ">
       <ResponsiveContainer>
         <LineChart
-          data={data}
+          data={displayedData?.data}
           margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
         >
           {/* <CartesianGrid strokeDasharray="3 3" stroke="#00000040" /> */}
@@ -84,8 +90,8 @@ const UserRatioLineChart = () => {
             stroke="#a7a9aa40"
             strokeDasharray="5 5"
           />
-          <XAxis dataKey="name" />
-          <YAxis domain={[0, 1500]} />
+          <XAxis dataKey="month" />
+          <YAxis />
           <Tooltip />
           {/* 
           <Line
@@ -100,7 +106,7 @@ const UserRatioLineChart = () => {
           /> */}
           <Line
             type="monotone"
-            dataKey="user"
+            dataKey="total"
             stroke="#25F4EE" // Teal for service users
             strokeWidth={4}
             dot={{ r: 0 }} // Teal dots with white fill

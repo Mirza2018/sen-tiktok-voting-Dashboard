@@ -2,6 +2,7 @@ import { notification } from "antd";
 
 export const tagTypes = {
   user: "User",
+  users:"users",
   candidate: "Candidate",
   vote: "Vote",
   profile: "Profile",

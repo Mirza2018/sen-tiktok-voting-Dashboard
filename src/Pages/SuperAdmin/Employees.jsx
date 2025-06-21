@@ -2,13 +2,49 @@ import { SearchOutlined } from "@ant-design/icons";
 import { ConfigProvider, Input } from "antd";
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
- 
+
 //* Modal Table
 import AllEmployeesTable from "../../Components/SuperAdminPages/EmployeesPage/AllEmployeesTable";
 import BlockEmployeesModal from "../../Components/SuperAdminPages/EmployeesPage/BlockEmployeesModal";
 import ViewEmployeesModal from "../../Components/SuperAdminPages/EmployeesPage/ViewEmployeesModal";
+import { useUserListQuery } from "../../redux/api/adminApi";
 
 const Employees = () => {
+  const [filters, setFilters] = useState({
+    page: 1,
+    limit: 8,
+  });
+
+  const onPageChange = (page, limit) => {
+    setFilters((prev) => ({
+      ...prev,
+      page,
+      limit,
+    }));
+  };
+  const {
+    data: userList,
+    currentData,
+    isLoading,
+    isFetching,
+    isSuccess,
+  } = useUserListQuery(filters);
+
+  const handleSearch = (search) => {
+    setFilters((prev) => ({
+      ...prev,
+      searchTerm: search,
+    }));
+  };
+
+
+
+
+
+  const displayedData = userList ?? currentData;
+  console.log(displayedData?.data);
+  console.log(displayedData?.meta);
+
   //* Store Search Value
   const [searchText, setSearchText] = useState("");
 
@@ -84,7 +120,7 @@ const Employees = () => {
     setIsVenueViewModalVisible(false);
     setIsVenueBlockModalVisible(false);
   };
- 
+
   return (
     <div
       className="bg-highlight-color min-h-[90vh]  rounded-xl"
@@ -101,7 +137,9 @@ const Employees = () => {
               <Input
                 placeholder="Search User..."
                 // value={searchText}
-                // onChange={(e) => onSearch(e.target.value)}
+                onChange={(e) => {
+                  handleSearch(e.target.value);
+                }}
                 className="text-primary-color font-semibold !border-primary-color !bg-transparent py-2 !rounded-full"
                 prefix={
                   <SearchOutlined className="text-primary-color font-bold text-lg mr-2" />
@@ -116,10 +154,12 @@ const Employees = () => {
       {/* Table  */}
       <div className="px-10 py-10">
         <AllEmployeesTable
-          data={data}
-          loading={loading}
+          data={displayedData?.data}
+          loading={isLoading}
           showVenueViewModal={showVenueViewModal}
           showVenueBlockModal={showVenueBlockModal}
+          meta={displayedData?.meta}
+          onPageChange={onPageChange}
           pageSize={8}
         />
       </div>

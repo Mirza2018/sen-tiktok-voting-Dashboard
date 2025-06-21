@@ -68,12 +68,64 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.vote],
     }),
-    singleVotingResult: build.query({
+    upcomingVote: build.query({
+      query: (params) => ({
+        url: `/voting/upcoming_voting`,
+        method: "GET",
+        params,
+      }),
+      providesTags: [tagTypes.vote],
+    }),
+    deleteVote: build.mutation({
       query: (id) => ({
-        url: `/voting/details/${id}`,
+        url: `/voting/delete/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: [tagTypes.vote],
+    }),
+
+    singleVotingResult: build.query({
+      query: (id) => {
+        console.log(id);
+
+        return {
+          url: `/voting/details/${id}`,
+          method: "GET",
+        };
+      },
+      // providesTags: [tagTypes.vote],
+    }),
+    userList: build.query({
+      query: (params) => ({
+        url: `/users/list`,
+        method: "GET",
+        params,
+      }),
+      providesTags: [tagTypes.users],
+    }),
+
+    totaCount: build.query({
+      query: () => ({
+        url: `/users/total_count`,
         method: "GET",
       }),
-      // providesTags: [tagTypes.vote],
+      providesTags: [tagTypes.users],
+    }),
+    userOverview: build.query({
+      query: () => ({
+        url: `/users/user_overview?year=2025`,
+        method: "GET",
+      }),
+      providesTags: [tagTypes.users],
+    }),
+
+    userAction: build.mutation({
+      query: (data) => ({
+        url: `/users/action/${data.id}`,
+        method: "PATCH",
+        body: data.data,
+      }),
+      invalidatesTags: [tagTypes.users],
     }),
     //end
   }),
@@ -86,5 +138,12 @@ export const {
   useCandidateDeleteMutation,
   useVoteCreateMutation,
   useVotingResultQuery,
-  useLazySingleVotingResultQuery
+  useLazySingleVotingResultQuery,
+  useSingleVotingResultQuery,
+  useUserListQuery,
+  useUserActionMutation,
+  useTotaCountQuery,
+  useUserOverviewQuery,
+  useUpcomingVoteQuery,
+  useDeleteVoteMutation,
 } = adminApi;

@@ -1,8 +1,7 @@
 import React from "react";
 import { TopCardIcons } from "../../../../public/images/AllImages";
 
-
-const TopCards = () => {
+const TopCards = ({ data }) => {
   return (
     <div className="flex flex-col sm:flex-row gap-1 lg:gap-5 mb-5">
       {/* Earning  */}
@@ -11,7 +10,9 @@ const TopCards = () => {
           <img src={TopCardIcons.totalEarning} className="h-14 w-12" alt="" />
 
           <div className="text-center w-fit">
-            <p className="text-sm lg:text-base xl:text-2xl font-bold ">$2500</p>
+            <p className="text-sm lg:text-base xl:text-2xl font-bold ">
+              € {data?.totalEarning.toFixed(2)}
+            </p>
             <p className="text-xs lg:text-sm xl:text-base  mb-1 ">
               Total Earning
             </p>
@@ -24,7 +25,9 @@ const TopCards = () => {
           <img src={TopCardIcons.totalPassenger} className="h-14 w-12" alt="" />
 
           <div className="text-center w-fit">
-            <p className="text-sm lg:text-base xl:text-2xl font-bold ">3500</p>
+            <p className="text-sm lg:text-base xl:text-2xl font-bold ">
+              {data?.totalUser}
+            </p>
             <p className="text-xs lg:text-sm xl:text-base  mb-1 ">
               Total Users
             </p>
@@ -37,7 +40,10 @@ const TopCards = () => {
           <img src={TopCardIcons.totalDriver} className="h-14 w-12" alt="" />
 
           <div className="text-center w-fit">
-            <p className="text-sm lg:text-base xl:text-2xl font-bold ">33</p>
+            <p className="text-sm lg:text-base xl:text-2xl font-bold ">
+              {" "}
+              {data?.totalVoting}
+            </p>
             <p className="text-xs lg:text-sm xl:text-base  mb-1 ">
               Total Voteing
             </p>

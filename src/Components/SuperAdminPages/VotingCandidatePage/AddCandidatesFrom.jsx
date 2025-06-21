@@ -182,6 +182,43 @@ const AddCandidatesFrom = ({
             </Form.Item>
 
             <Typography.Title level={4} style={{ color: "#222222" }}>
+              Instagram Link
+            </Typography.Title>
+            <Form.Item
+              // rules={[
+              //   {
+              //     required: true,
+              //     message: "Please Enter Candidate instagram Link",
+              //   },
+              // ]}
+              name="instagramLink"
+              className=" "
+            >
+              <Input
+                placeholder="Enter instagram link"
+                className=" px-3 text-xl border !border-input-color !bg-transparent "
+              />
+            </Form.Item>
+            <Typography.Title level={4} style={{ color: "#222222" }}>
+              Facebook Link
+            </Typography.Title>
+            <Form.Item
+              // rules={[
+              //   {
+              //     required: true,
+              //     message: "Please Enter Candidate Facebook Link",
+              //   },
+              // ]}
+              name="facebookLink"
+              className=" "
+            >
+              <Input
+                placeholder="Enter Facebook link"
+                className=" px-3 text-xl border !border-input-color !bg-transparent "
+              />
+            </Form.Item>
+
+            <Typography.Title level={4} style={{ color: "#222222" }}>
               Followers
             </Typography.Title>
             <Form.Item

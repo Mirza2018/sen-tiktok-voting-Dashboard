@@ -29,21 +29,16 @@ import Loading from "../Components/UI/Loading";
 import AdminAllFeedBack from "../Pages/Admin/AllFeedback";
 
 import FAQ from "../Components/Dashboard/FAQ/FAQ";
-import DriverRequestAccept from "../Components/SuperAdminPages/DriverRequestPage/DriverRequestAccept";
-import DriverSeeDetails from "../Components/SuperAdminPages/DriverRequestPage/DriverSeeDetails";
 import CreateVotingPage from "../Pages/Admin/CreateVotingPage";
-import NotificationsPage from "../Pages/Admin/NotificationsPage";
 import SettingsPage from "../Pages/Admin/SettingsPage";
 import VotingCandidatePage from "../Pages/Admin/VotingCandidatePage";
 import CustomerService from "../Pages/Common/settings/CustomerService";
 import Safely from "../Pages/Common/settings/Safely";
-import AllDriver from "../Pages/SuperAdmin/AllDriver";
-import DriverRequest from "../Pages/SuperAdmin/DriverRequest";
 import EarningsPage from "../Pages/SuperAdmin/EarningsPage";
 import Employees from "../Pages/SuperAdmin/Employees";
-import Offers from "../Pages/SuperAdmin/Offers";
 import Passengers from "../Pages/SuperAdmin/Passengers";
 import SuperAdminDashboard from "../Pages/SuperAdmin/SuperAdminDashboard";
+import UpcomingVote from "../Pages/SuperAdmin/UpcomingVote";
 
 function AuthRedirect() {
   const navigate = useNavigate();
@@ -88,6 +83,10 @@ const router = createBrowserRouter([
         element: <Passengers />,
       },
       {
+        path: "upcomming_vote",
+        element: <UpcomingVote />,
+      },
+      {
         path: "voting_candidate",
         element: <VotingCandidatePage />,
       },
@@ -96,35 +95,12 @@ const router = createBrowserRouter([
         element: <CreateVotingPage />,
       },
 
-      {
-        path: "all-driver",
-        element: <AllDriver />,
-      },
-      {
-        path: "driver-request",
-        element: <DriverRequest />,
-      },
-      {
-        path: "driver-request/deatils/:id",
-        element: <DriverSeeDetails />,
-      },
-      {
-        path: "driver-request/deatils/:id/accepted",
-        element: <DriverRequestAccept />,
-      },
-
+      
       {
         path: "earnings",
         element: <EarningsPage />,
       },
-      {
-        path: "offers",
-        element: <Offers />,
-      },
-      {
-        path: "notification",
-        element: <NotificationsPage />,
-      },
+      
       {
         path: "settings",
         element: <SettingsPage />,

@@ -40,7 +40,8 @@ const CreateVotingPage = () => {
     const formateDurationTime = dayjs(values.battle_duration_minutes).format(
       "HH:mm:ss"
     );
-    const formateBattleDate = new Date(values.battle_date.$d).toISOString();
+    const formateBattleDate = dayjs(values.battle_date).format("YYYY-MM-DD");
+    // const formateBattleDate = new Date(values.battle_date.$d).toISOString()
     const formateBattleStartTime = dayjs(values.battle_start_time).format(
       "HH:mm:ss"
     );
@@ -49,12 +50,13 @@ const CreateVotingPage = () => {
     }));
 
     console.log(
-      formateDurationTime,
+      // formateDurationTime,
       formateBattleDate,
-      formateBattleStartTime,
-      transformedCandidates
+      // formateBattleStartTime,
+      // transformedCandidates
     );
 
+    // return;
     const data = {
       battleTime: formateDurationTime,
       battleStartDate: formateBattleDate,
@@ -70,7 +72,7 @@ const CreateVotingPage = () => {
         duration: 2000,
       });
       form.resetFields();
-      navigate("/admin/voting_result");
+      navigate("/admin/upcomming_vote");
     } catch (error) {
       console.log(error);
       toast.error(

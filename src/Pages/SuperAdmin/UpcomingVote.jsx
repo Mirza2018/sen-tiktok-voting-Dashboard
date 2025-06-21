@@ -1,18 +1,16 @@
-import { useMemo } from "react";
-import { useEffect } from "react";
 import { useState } from "react";
-import axios from "axios";
-import { ConfigProvider, Input } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
-import { IoMdAddCircleOutline } from "react-icons/io";
 
 //* Modal Table
 import AllPassengersTable from "../../Components/SuperAdminPages/PassengersPage/AllPassengersTable";
 import ViewPassengersModal from "../../Components/SuperAdminPages/PassengersPage/ViewPassengersModal";
-import BlockPassengersModal from "../../Components/SuperAdminPages/PassengersPage/BlockPassengersModal";
-import { useVotingResultQuery } from "../../redux/api/adminApi";
+import {
+  useUpcomingVoteQuery,
+  useVotingResultQuery,
+} from "../../redux/api/adminApi";
+import AllUpcomeingVoteTable from "../../Components/SuperAdminPages/PassengersPage/AllUpcomeingVoteTable";
+import UpcomingVoteDelete from "../../Components/SuperAdminPages/PassengersPage/UpcomingVoteDelete";
 
-const Passengers = () => { 
+const UpcomingVote = () => {
   const [filters, setFilters] = useState({
     page: 1,
     limit: 8,
@@ -26,7 +24,7 @@ const Passengers = () => {
       limit,
     }));
   };
-  const { data, isLoading } = useVotingResultQuery(filters);
+  const { data, isLoading } = useUpcomingVoteQuery(filters);
   //* Store Search Value
 
   // console.log(data);
@@ -114,7 +112,7 @@ const Passengers = () => {
 
       {/* Table  */}
       <div className="px-10 py-10">
-        <AllPassengersTable
+        <AllUpcomeingVoteTable
           data={data?.data?.result}
           meta={data?.data?.meta}
           loading={isLoading}
@@ -124,7 +122,7 @@ const Passengers = () => {
         />
       </div>
 
-      <ViewPassengersModal
+      <UpcomingVoteDelete
         isCompanyViewModalVisible={isCompanyViewModalVisible}
         handleCancel={handleCancel}
         currentCompanyRecord={currentCompanyRecord}
@@ -134,4 +132,4 @@ const Passengers = () => {
   );
 };
 
-export default Passengers;
+export default UpcomingVote;

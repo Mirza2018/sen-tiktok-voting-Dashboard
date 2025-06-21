@@ -6,6 +6,7 @@ import { useState } from "react";
 import { CiUser } from "react-icons/ci";
 import { FiBell } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { useGetProfileQuery } from "../../redux/api/profileApi";
 
 const notifications = [
   {
@@ -36,7 +37,11 @@ const notifications = [
 ];
 
 const Topbar = ({ collapsed, setCollapsed }) => {
-  const user = JSON.parse(localStorage.getItem("home_care_user"));
+  const { data, currentData, isLoading, isFetching, isSuccess } =
+    useGetProfileQuery();
+  const displayedData = data ?? currentData;
+  console.log(displayedData?.data?.name);
+  
   const [notificationCount, setNotificationCount] = useState(
     notifications.length
   );
@@ -99,8 +104,11 @@ const Topbar = ({ collapsed, setCollapsed }) => {
           className="flex items-center justify-center gap-2 bg-transparent text-base-color border-0 rounded-lg h-8 px-2 py-1  mr-5"
         >
           <div className="flex justify-end items-center  gap-2">
-            <div className="flex justify-center flex-col items-end gap-2 leading-none">  
-              <h1 className="text-[#242424]">James Mitchell</h1>
+            <div className="flex justify-center flex-col items-end gap-2 leading-none">
+              <h1 className="text-[#242424]">
+                {displayedData?.data?.name.split(",")[0]}{" "}
+                {displayedData?.data?.name.split(",")[1]}
+              </h1>
               <p className="text-[#8A8D8E]">Admin</p>
             </div>
             <CiUser className="text-secondary-color font-bold text-xl rounded-full border border-secondary-color w-10 h-10 p-1" />

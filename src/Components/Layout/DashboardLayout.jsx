@@ -28,6 +28,7 @@ const DashboardLayout = () => {
     if (currentPath.includes("/dashboard")) return ["dashboard"];
     if (currentPath.includes("/users")) return ["users"];
     if (currentPath.includes("/voting_result")) return ["voting_result"];
+    if (currentPath.includes("/upcomming_vote")) return ["upcomming_vote"];
     if (currentPath.includes("/voting_candidate")) return ["voting_candidate"];
     if (currentPath.includes("/create_voting")) return ["create_voting"];
     if (currentPath.includes("/earnings")) return ["earnings"];
@@ -134,6 +135,22 @@ const DashboardLayout = () => {
       label: <NavLink to="voting_result">Voting Result</NavLink>,
     },
     {
+      key: "upcomming_vote",
+      icon: (
+        <img
+          src={AllIcons.two}
+          alt="upcomming_vote"
+          width={20}
+          style={{
+            filter: location.pathname.includes("upcomming_vote")
+              ? "brightness(0) invert(0)"
+              : undefined,
+          }}
+        />
+      ),
+      label: <NavLink to="upcomming_vote">Upcoming Voting</NavLink>,
+    },
+    {
       key: "voting_candidate",
       icon: (
         <img
@@ -166,8 +183,6 @@ const DashboardLayout = () => {
       ),
       label: <NavLink to="create_voting">Create Voting</NavLink>,
     },
-
-
   ];
 
   const commonItems = [
