@@ -63,8 +63,8 @@ const Profile = () => {
                 />
                 <p className="text-center text-2xl font-medium">Admin</p>
                 <p className="text-3xl font-medium">
-                  {displayedData?.data.name.split(",")[0]}{" "}
-                  {displayedData?.data.name.split(",")[1]}
+                  {displayedData?.data?.name?.split(",")[0]}{" "}
+                  {displayedData?.data?.name?.split(",")[1]}
                 </p>
               </div>
             </div>
@@ -81,7 +81,7 @@ const Profile = () => {
                       First Name
                     </Typography.Title>
                     <Form.Item
-                      initialValue={displayedData?.data.name.split(",")[0]}
+                      initialValue={displayedData?.data?.name?.split(",")[0]}
                       className="text-white"
                       name="firstName"
                     >
@@ -99,7 +99,7 @@ const Profile = () => {
                     </Typography.Title>
                     <Form.Item
                       name="lastName"
-                      initialValue={displayedData?.data.name.split(",")[1]}
+                      initialValue={displayedData?.data?.name?.split(",")[1]}
                       className="text-white"
                     >
                       <Input

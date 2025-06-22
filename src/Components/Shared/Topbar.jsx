@@ -106,8 +106,8 @@ const Topbar = ({ collapsed, setCollapsed }) => {
           <div className="flex justify-end items-center  gap-2">
             <div className="flex justify-center flex-col items-end gap-2 leading-none">
               <h1 className="text-[#242424]">
-                {displayedData?.data?.name.split(",")[0]}{" "}
-                {displayedData?.data?.name.split(",")[1]}
+                {displayedData?.data?.name?.split(",")[0]}{" "}
+                {displayedData?.data?.name?.split(",")[1]}
               </h1>
               <p className="text-[#8A8D8E]">Admin</p>
             </div>

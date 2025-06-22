@@ -153,8 +153,8 @@ const EditProfile = () => {
                 </div>
                 <p className="text-center text-2xl font-medium">Admin</p>
                 <p className="text-3xl font-medium">
-                  {displayedData?.data.name.split(",")[0]}{" "}
-                  {displayedData?.data.name.split(",")[1]}
+                  {displayedData?.data?.name?.split(",")[0]}{" "}
+                  {displayedData?.data?.name?.split(",")[1]}
                 </p>
               </div>
 
@@ -165,7 +165,7 @@ const EditProfile = () => {
                       First Name
                     </Typography.Title>
                     <Form.Item
-                      initialValue={displayedData?.data.name.split(",")[0]}
+                      initialValue={displayedData?.data?.name?.split(",")[0]}
                       name="firstName"
                       className="text-white "
                     >
@@ -182,7 +182,7 @@ const EditProfile = () => {
                       Last Name
                     </Typography.Title>
                     <Form.Item
-                      initialValue={displayedData?.data.name.split(",")[1]}
+                      initialValue={displayedData?.data?.name?.split(",")[1]}
                       // initialValue={profileData.LastName}
                       name="lastName"
                       className="text-white "
