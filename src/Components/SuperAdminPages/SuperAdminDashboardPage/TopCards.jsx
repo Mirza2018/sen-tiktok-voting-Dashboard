@@ -11,7 +11,7 @@ const TopCards = ({ data }) => {
 
           <div className="text-center w-fit">
             <p className="text-sm lg:text-base xl:text-2xl font-bold ">
-              € {data?.totalEarning.toFixed(2)}
+              $ {data?.totalEarning.toFixed(2)}
             </p>
             <p className="text-xs lg:text-sm xl:text-base  mb-1 ">
               Total Earning
