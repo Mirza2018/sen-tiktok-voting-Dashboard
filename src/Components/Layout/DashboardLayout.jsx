@@ -14,9 +14,9 @@ import Topbar from "../Shared/Topbar";
 import { AllIcons, AllImages } from "../../../public/images/AllImages";
 import TopLoadingBar from "react-top-loading-bar";
 import { useDispatch } from "react-redux";
+import { clearAuth } from "../../redux/slices/authSlice";
 
 const DashboardLayout = () => {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -233,7 +233,6 @@ const DashboardLayout = () => {
             <NavLink to="settings/change-password">Change Password</NavLink>
           ),
         },
-
       ],
     },
     {
@@ -248,14 +247,19 @@ const DashboardLayout = () => {
         />
       ),
       label: (
-        <div onClick={() => localStorage.removeItem("home_care_user")}>
-          <NavLink to="/signin">Logout</NavLink>
+        <div
+          onClick={() => {
+            dispatch(clearAuth());
+            navigate("/signin");
+          }}
+        >
+          Logout
         </div>
       ),
     },
   ];
 
-  const menuItems = adminMenuItems  // Ensure companyMenuItems is defined
+  const menuItems = adminMenuItems; // Ensure companyMenuItems is defined
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {

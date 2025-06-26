@@ -118,7 +118,7 @@ const CreateVotingPage = () => {
           </div> */}
           </div>
         </div>
-
+ 
         <Form
           form={form}
           layout="vertical"

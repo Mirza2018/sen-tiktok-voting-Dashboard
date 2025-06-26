@@ -15,7 +15,7 @@ import { AllImages } from "../../../../public/images/AllImages";
 import { toast } from "sonner";
 import { useCandidateCreateMutation } from "../../../redux/api/adminApi";
 
-const { TextArea } = Input; 
+const { TextArea } = Input;
 
 const AddCandidatesFrom = ({
   isAddCompanyModalVisible,
@@ -32,6 +32,19 @@ const AddCandidatesFrom = ({
     let data = { ...values };
     delete data.profileImage;
     delete data.backgroundImage;
+
+    if (!values?.profileImage?.fileList[0]?.originFileObj) {
+      return toast.error("Please selete the profileImage", {
+        id: toastId,
+        duration: 2000,
+      });
+    }
+    if (!values?.backgroundImage?.fileList[0]?.originFileObj) {
+      return toast.error("Please selete the Background Image", {
+        id: toastId,
+        duration: 2000,
+      });
+    }
     const formData = new FormData();
     formData.append("data", JSON.stringify(data));
     formData.append(

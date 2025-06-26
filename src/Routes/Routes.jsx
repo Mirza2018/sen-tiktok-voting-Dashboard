@@ -20,21 +20,15 @@ import SettingsChangePassword from "../Pages/Common/settings/SettingsChangePassw
 import SettingsForgotPassword from "../Pages/Common/settings/SettingsForgotPassword";
 import SettingsOtpPage from "../Pages/Common/settings/SettingsOtpPage";
 import SettingsUpdatePassword from "../Pages/Common/settings/SettingsUpdatePassword";
-import TermsOfService from "../Pages/Common/settings/TermsOfService";
 
 //* Admin Dashboard
 
 //* Company Dashboard
 import Loading from "../Components/UI/Loading";
-import AdminAllFeedBack from "../Pages/Admin/AllFeedback";
 
-import FAQ from "../Components/Dashboard/FAQ/FAQ";
 import CreateVotingPage from "../Pages/Admin/CreateVotingPage";
 import SettingsPage from "../Pages/Admin/SettingsPage";
 import VotingCandidatePage from "../Pages/Admin/VotingCandidatePage";
-import CustomerService from "../Pages/Common/settings/CustomerService";
-import Safely from "../Pages/Common/settings/Safely";
-import EarningsPage from "../Pages/SuperAdmin/EarningsPage";
 import Employees from "../Pages/SuperAdmin/Employees";
 import Passengers from "../Pages/SuperAdmin/Passengers";
 import SuperAdminDashboard from "../Pages/SuperAdmin/SuperAdminDashboard";
@@ -96,11 +90,7 @@ const router = createBrowserRouter([
       },
 
       
-      {
-        path: "earnings",
-        element: <EarningsPage />,
-      },
-      
+    
       {
         path: "settings",
         element: <SettingsPage />,
@@ -109,30 +99,13 @@ const router = createBrowserRouter([
         path: "settings/change-password",
         element: <SettingsChangePassword />,
       },
-      {
-        path: "settings/faq",
-        element: <FAQ />,
-      },
-      {
-        path: "settings/safety",
-        element: <Safely />,
-      },
-      {
-        path: "settings/terms-and-condition",
-        element: <TermsOfService />,
-      },
-      {
-        path: "settings/customer-service",
-        element: <CustomerService />,
-      },
+ 
+    
       {
         path: "notifications",
         element: <Notifications />,
       },
-      {
-        path: "show-feedback",
-        element: <AdminAllFeedBack />,
-      },
+      
       {
         path: "profile",
         element: <Profile />,
