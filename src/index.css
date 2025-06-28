@@ -30,6 +30,16 @@ th {
   color: #25f4ee !important;
 }
 
+
+.ant-upload-list-item-name {
+  color: #25f4ee;
+  width: 150px;
+
+}
+.ant-upload-list .ant-upload-list-item .ant-upload-list-item-actions .ant-upload-list-item-action .anticon-delete{
+  color: #fe2c55 !important;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
