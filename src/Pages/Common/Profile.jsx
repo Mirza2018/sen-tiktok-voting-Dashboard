@@ -20,7 +20,10 @@ const Profile = () => {
   const [imageUrl, setImageUrl] = useState(profileImage);
   useEffect(() => {
     setImageUrl(getImageUrl() + displayedData?.data?.profileImage);
+  
+    
   }, [displayedData?.data]);
+  console.log(getImageUrl() + displayedData?.data?.profileImage);
   if (isLoading)
     return <Spin className="flex justify-center items-center" size="large" />;
   if (!isLoading && isFetching)

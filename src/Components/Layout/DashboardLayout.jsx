@@ -102,22 +102,22 @@ const DashboardLayout = () => {
       ),
       label: <NavLink to="dashboard">Dashboard</NavLink>,
     },
-    {
-      key: "users",
-      icon: (
-        <img
-          src={AllIcons.four}
-          alt="users"
-          width={20}
-          style={{
-            filter: location.pathname.includes("users")
-              ? "brightness(0) invert(0)"
-              : undefined,
-          }}
-        />
-      ),
-      label: <NavLink to="users">Users</NavLink>,
-    },
+    // {
+    //   key: "users",
+    //   icon: (
+    //     <img
+    //       src={AllIcons.four}
+    //       alt="users"
+    //       width={20}
+    //       style={{
+    //         filter: location.pathname.includes("users")
+    //           ? "brightness(0) invert(0)"
+    //           : undefined,
+    //       }}
+    //     />
+    //   ),
+    //   label: <NavLink to="users">Users</NavLink>,
+    // },
     {
       key: "voting_result",
       icon: (

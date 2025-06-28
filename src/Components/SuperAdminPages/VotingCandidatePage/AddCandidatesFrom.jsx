@@ -71,10 +71,17 @@ const AddCandidatesFrom = ({
       setIsAddCompanyModalVisible(false);
     } catch (error) {
       console.error("Error submitting to API:", error);
-      toast.error("There is some problem, Please try later ", {
-        id: toastId,
-        duration: 2000,
-      });
+      if (error.data.message.includes("E11000 duplicate key error")) {
+        return toast.error(`The  is already in use.`, {
+          id: toastId,
+          duration: 2000,
+        });
+      } else {
+        return toast.error("There is some problem, Please try later ", {
+          id: toastId,
+          duration: 2000,
+        });
+      }
     }
   };
 
