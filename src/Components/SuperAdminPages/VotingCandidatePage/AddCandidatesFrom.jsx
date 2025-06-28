@@ -373,7 +373,7 @@ const AddCandidatesFrom = ({
                 className="py-2 px-3 text-xl bg-site-color border !border-tok-color "
               />
             </Form.Item>
-            <Typography.Title level={4} style={{ color: "#fff" }}>
+            {/* <Typography.Title level={4} style={{ color: "#fff" }}>
               Password
             </Typography.Title>
             <Form.Item
@@ -389,7 +389,7 @@ const AddCandidatesFrom = ({
                 placeholder="Enter Candidate password"
                 className="py-2 px-3 text-xl bg-site-color border !border-tok-color "
               />
-            </Form.Item>
+            </Form.Item> */}
 
             <Form.Item>
               <Button
