@@ -152,27 +152,27 @@ const EditCandidateModal = ({
             </Form.Item> */}
 
             {/* <div className="flex gap-5 justify-between"> */}
-         
-                <Typography.Title level={4} style={{ color: "#000" }}>
-                  Candidate Name
-                </Typography.Title>
-                <Form.Item
-                  name="name"
-                  className=""
-                  rules={[
-                    {
-                      required: true,
-                      message: "Name is Required",
-                    },
-                  ]}
-                >
-                  <Input
-                    placeholder="Enter your name"
-                    className="py-2 px-3 text-xl bg-site-color border !border-tok-color "
-                  />
-                </Form.Item>
-      
-              {/* <div className="w-full">
+
+            <Typography.Title level={4} style={{ color: "#000" }}>
+              Candidate Name
+            </Typography.Title>
+            <Form.Item
+              name="name"
+              className=""
+              rules={[
+                {
+                  required: true,
+                  message: "Name is Required",
+                },
+              ]}
+            >
+              <Input
+                placeholder="Enter your name"
+                className="py-2 px-3 text-xl bg-site-color border !border-tok-color "
+              />
+            </Form.Item>
+
+            {/* <div className="w-full">
                 <Typography.Title level={4} style={{ color: "#000" }}>
                   Candidate Email
                 </Typography.Title>
@@ -232,7 +232,7 @@ const EditCandidateModal = ({
                   <Input
                     controls={false}
                     placeholder="Enter your followers"
-                    className="py-1 px-3 text-xl bg-site-color border !border-tok-color w-full"
+                    className="py-2 px-3 text-xl bg-site-color border !border-tok-color "
                   />
                 </Form.Item>
               </div>
@@ -424,7 +424,7 @@ const EditCandidateModal = ({
                 className="w-full py-6 border !border-secondary-color hover:border-secondary-color text-xl !text-primary-color bg-secondary-color hover:!bg-secondary-color font-semibold rounded mt-3"
                 htmlType="submit"
               >
-               Update
+                Update
               </Button>
             </Form.Item>
           </Form>

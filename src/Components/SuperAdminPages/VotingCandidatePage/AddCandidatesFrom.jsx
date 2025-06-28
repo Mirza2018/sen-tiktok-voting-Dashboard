@@ -204,7 +204,7 @@ const AddCandidatesFrom = ({
                   <Input
                     controls={false}
                     placeholder="Enter your followers"
-                    className="py-1 px-3 text-xl bg-site-color border !border-tok-color w-full"
+                    className="py-2 px-3 text-xl bg-site-color border !border-tok-color "
                   />
                 </Form.Item>
               </div>
