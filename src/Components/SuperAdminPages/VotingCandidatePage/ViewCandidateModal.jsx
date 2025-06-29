@@ -74,14 +74,14 @@ const ViewCandidateModal = ({
             </div>
           </div>
         </div>
-        <button
+        {/* <button
           onClick={() => (
             handleVenueBlock(currentVenueRecord), showVenueBlockModal()
           )}
           className="bg-secondary-color text-primary-color py-3 text-xl font-semibold rounded-lg mt-8 w-full"
         >
           Block
-        </button>
+        </button> */}
       </div>
     </Modal>
   );
