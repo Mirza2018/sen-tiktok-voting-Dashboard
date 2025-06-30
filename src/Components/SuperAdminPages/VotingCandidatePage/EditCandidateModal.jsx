@@ -238,7 +238,7 @@ const EditCandidateModal = ({
               </div>
             </div>
 
-            <Typography.Title level={4} style={{ color: "#222222" }}>
+            <Typography.Title level={4} style={{ color: "#000" }}>
               Candidate Image
             </Typography.Title>
 
@@ -311,7 +311,7 @@ const EditCandidateModal = ({
 
             <div className="flex gap-5 justify-between">
               <div className="w-full">
-                <Typography.Title level={4} style={{ color: "#fff" }}>
+                <Typography.Title level={4} style={{ color: "#000" }}>
                   Instagram Link
                 </Typography.Title>
                 <Form.Item name="instagramLink" className="">
@@ -322,7 +322,7 @@ const EditCandidateModal = ({
                 </Form.Item>
               </div>
               <div className="w-full">
-                <Typography.Title level={4} style={{ color: "#fff" }}>
+                <Typography.Title level={4} style={{ color: "#000" }}>
                   Facebook Link
                 </Typography.Title>
                 <Form.Item name="facebookLink" className="">

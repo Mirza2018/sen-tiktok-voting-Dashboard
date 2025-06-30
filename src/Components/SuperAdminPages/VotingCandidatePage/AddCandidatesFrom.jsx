@@ -217,7 +217,7 @@ const AddCandidatesFrom = ({
               </div>
             </div>
 
-            <Typography.Title level={4} style={{ color: "#222222" }}>
+            <Typography.Title level={4} style={{ color: "#000" }}>
               Candidate Image
             </Typography.Title>
 
@@ -243,7 +243,7 @@ const AddCandidatesFrom = ({
 
             <Typography.Title
               level={4}
-              style={{ color: "#222222" }}
+              style={{ color: "#000" }}
               className="mt-5"
             >
               Candidate Background Image
@@ -290,7 +290,7 @@ const AddCandidatesFrom = ({
 
             <div className="flex gap-5 justify-between">
               <div className="w-full">
-                <Typography.Title level={4} style={{ color: "#fff" }}>
+                <Typography.Title level={4} style={{ color: "#000" }}>
                   Instagram Link
                 </Typography.Title>
                 <Form.Item name="instagramLink" className="">
@@ -301,7 +301,7 @@ const AddCandidatesFrom = ({
                 </Form.Item>
               </div>
               <div className="w-full">
-                <Typography.Title level={4} style={{ color: "#fff" }}>
+                <Typography.Title level={4} style={{ color: "#000" }}>
                   Facebook Link
                 </Typography.Title>
                 <Form.Item name="facebookLink" className="">
