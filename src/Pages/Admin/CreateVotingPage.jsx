@@ -3,6 +3,7 @@ import {
   DatePicker,
   Form,
   Input,
+  InputNumber,
   Select,
   Spin,
   TimePicker,
@@ -49,16 +50,30 @@ const CreateVotingPage = () => {
       candidateId: id,
     }));
 
+    const battleDaysInHours = values.battle_duration_days * 24;
+
+    const [hoursStr, minutesStr, secondsStr] = formateDurationTime.split(":");
+
+    const totalHoursDecimal = battleDaysInHours + parseInt(hoursStr);
+    const totalHours = Math.floor(totalHoursDecimal);
+
+    // const totalSeconds = Math.round((totalMinutesDecimal - totalMinutes) * 60);
+
+    // Format with leading zeros
+    const hh = String(totalHours).padStart(2, "0");
+    const ss = 0;
+
+    const formattedTime = `${hh}:${minutesStr}:${ss}${ss}`;
+
     console.log(
-      // formateDurationTime,
-      formateBattleDate,
+      formattedTime
+
       // formateBattleStartTime,
       // transformedCandidates
     );
 
-    // return;
     const data = {
-      battleTime: formateDurationTime,
+      battleTime: formattedTime,
       battleStartDate: formateBattleDate,
       battleStartTime: formateBattleStartTime,
       participates: transformedCandidates,
@@ -118,36 +133,55 @@ const CreateVotingPage = () => {
           </div> */}
           </div>
         </div>
- 
+
         <Form
           form={form}
           layout="vertical"
           className=" mt-10 w-[95%] mx-auto"
           onFinish={onFinish}
         >
-          <Form.Item
-            rules={[
-              {
-                required: true,
-                message: "Please input  Battle Durartion Time !",
-              },
-            ]}
-            label={
-              <div className="text-lg font-medium">
-                {" "}
-                Battle Durartion Time (HH:MM)
-              </div>
-            }
-            name="battle_duration_minutes"
-            className=" "
-          >
-            {/* <Input
-            className="placeholder:text-secondary-color placeholder:text-xl py-3"
-            placeholder="Battle duration minutes"
-          /> */}
-            {/* <TimePicker className="w-full" /> */}
-            <TimePicker className="w-full" format={format} />
-          </Form.Item>
+          <div className="flex justify-between gap-5">
+            <Form.Item
+              rules={[
+                {
+                  required: true,
+                  message: "Please input Battle Durartion Days",
+                },
+              ]}
+              label={
+                <div className="text-lg font-medium">
+                  {" "}
+                  Battle Durartion Days
+                </div>
+              }
+              name="battle_duration_days"
+              className=" w-full"
+            >
+              <InputNumber
+                controls={false}
+                className="!placeholder:text-secondary-color !placeholder:text-lg w-full border !border-secondary-color !py-1"
+                placeholder="0"
+              />
+            </Form.Item>
+            <Form.Item
+              rules={[
+                {
+                  required: true,
+                  message: "Please input  Battle Durartion Time !",
+                },
+              ]}
+              label={
+                <div className="text-lg font-medium">
+                  {" "}
+                  Battle Durartion Time (HH:MM)
+                </div>
+              }
+              name="battle_duration_minutes"
+              className=" w-full"
+            >
+              <TimePicker className="w-full" format={format} />
+            </Form.Item>
+          </div>
           <div className="flex justify-between gap-5">
             <Form.Item
               rules={[
