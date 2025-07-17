@@ -63,7 +63,7 @@ const VoatingCandidateTable = ({
           <Space size="middle">
             {/* Block User Tooltip */}
 
-            <Tooltip placement="left" title="Block this User">
+            <Tooltip placement="left" title="Edit Candidate">
               <Button
                 className="!p-0"
                 style={{
@@ -76,7 +76,7 @@ const VoatingCandidateTable = ({
                 <BiEdit style={{ fontSize: "28px" }} />
               </Button>
             </Tooltip>
-            <Tooltip placement="left" title="Block this User">
+            <Tooltip placement="left" title="Delete Candidate">
               <Button
                 className="!p-0"
                 style={{
