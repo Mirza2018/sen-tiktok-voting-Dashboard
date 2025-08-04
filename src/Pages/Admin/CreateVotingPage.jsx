@@ -2,20 +2,18 @@ import {
   Button,
   DatePicker,
   Form,
-  Input,
   InputNumber,
   Select,
   Spin,
-  TimePicker,
+  TimePicker
 } from "antd";
-import { useState } from "react";
 import dayjs from "dayjs";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 import {
   useCandidateListQuery,
   useVoteCreateMutation,
 } from "../../redux/api/adminApi";
-import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
 //* Modal Table
 
 const CreateVotingPage = () => {
@@ -262,21 +260,3 @@ const CreateVotingPage = () => {
 
 export default CreateVotingPage;
 
-const options = [
-  { value: "shakilaparvin", label: "Shakila Parvin" },
-  { value: "raisajahan", label: "Raisa Jahan" },
-  { value: "awhidafridi", label: "Awhid Afridi" },
-  { value: "noureenafrosepiya", label: "Noureen Afrose Piya" },
-  { value: "sarahkhan", label: "Sarah Khan" },
-  { value: "imranali", label: "Imran Ali" },
-  { value: "farihaiqbal", label: "Fariha Iqbal" },
-  { value: "tariqhassan", label: "Tariq Hassan" },
-  { value: "johnsmith", label: "John Smith" },
-  { value: "laracroft", label: "Lara Croft" },
-  { value: "danielcraig", label: "Daniel Craig" },
-  { value: "emmawatson", label: "Emma Watson" },
-  { value: "jacobmurphy", label: "Jacob Murphy" },
-  { value: "sophialoren", label: "Sophia Loren" },
-  { value: "leonardodicaprio", label: "Leonardo DiCaprio" },
-  { value: "natalieportman", label: "Natalie Portman" },
-];

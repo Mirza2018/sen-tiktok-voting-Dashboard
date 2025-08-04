@@ -3,6 +3,8 @@ import { Avatar, Button, Space, Table, Tooltip } from "antd";
 import { GoEye } from "react-icons/go";
 import { getImageUrl } from "../../../redux/getBaseUrl";
 import { TbTrash } from "react-icons/tb";
+import { CiEdit } from "react-icons/ci";
+import { FaEdit } from "react-icons/fa";
 
 const AllUpcomeingVoteTable = ({
   data,
@@ -10,10 +12,11 @@ const AllUpcomeingVoteTable = ({
   onPageChange,
   meta,
   showCompanyViewModal,
+  showEditModal,
   showCompanyBlockModal,
   pageSize = 0,
 }) => {
-  console.log(data);
+  // console.log(data);
 
   const dateFunction = (date) => {
     let inputDate = new Date(date);
@@ -55,22 +58,6 @@ const AllUpcomeingVoteTable = ({
       ),
     },
 
-    // {
-    //   title: "Result",
-    //   dataIndex: "status",
-    //   key: "status",
-    //   render: (text) => (
-    //     <div className="flex items-center gap-2">
-    //       <p
-    //         className={`font-medium  px-2 rounded-md ${
-    //           text == "ongoing" ? " bg-yellow-400" : "bg-green-400"
-    //         }`}
-    //       >
-    //         {text == "ongoing" ? "ongoing" : "Complete"}
-    //       </p>
-    //     </div>
-    //   ),
-    // },
     {
       title: "Participates",
       dataIndex: "participates",
@@ -81,7 +68,7 @@ const AllUpcomeingVoteTable = ({
               console.log(p?.candidateInfo?.name);
             } */}
           {text.map((p) => (
-            <div className="flex items-center gap-2 mt-2">
+            <div key={p?._id} className="flex items-center gap-2 mt-2">
               <Avatar
                 size={36}
                 src={getImageUrl() + p?.candidateInfo?.profileImage}
@@ -104,14 +91,27 @@ const AllUpcomeingVoteTable = ({
         <>
           <Space size="middle">
             {/* View Details Tooltip */}
-            <Tooltip placement="right" title="View Details">
+            <Tooltip placement="right" title="Edit Vote">
+              <Button
+                className="!p-0 text-blue-600"
+                style={{
+                  background: "#FFFFFF",
+                  border: "none",
+                }}
+                onClick={() => showEditModal(record)}
+              >
+                {/* <CiEdit /> */}
+                <FaEdit style={{ fontSize: "24px" }} />
+              </Button>
+            </Tooltip>
+            <Tooltip placement="right" title="Delete Vote">
               <Button
                 className="!p-0 text-red-500"
                 style={{
                   background: "#FFFFFF",
                   border: "none",
                 }}
-                onClick={() => showCompanyViewModal(record?._id)}
+                onClick={() => showCompanyViewModal(record)}
               >
                 <TbTrash style={{ fontSize: "24px" }} />
               </Button>

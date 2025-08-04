@@ -14,15 +14,15 @@ const UpcomingVoteDelete = ({
   currentCompanyRecord,
   handleCompanyBlock,
 }) => {
-  console.log(currentCompanyRecord);
+  // console.log(currentCompanyRecord);
   const [deleteBattle] = useDeleteVoteMutation();
-  console.log(currentCompanyRecord);
+  // console.log(currentCompanyRecord);
 
   const userDelete = async () => {
     const toastId = toast.loading("Battle is deleteing...");
 
     try {
-      const res = await deleteBattle(currentCompanyRecord).unwrap();
+      const res = await deleteBattle(currentCompanyRecord?._id).unwrap();
       console.log(res);
       toast.success("Battle is deleted", {
         id: toastId,

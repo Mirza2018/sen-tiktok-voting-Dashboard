@@ -40,7 +40,7 @@ const Topbar = ({ collapsed, setCollapsed }) => {
   const { data, currentData, isLoading, isFetching, isSuccess } =
     useGetProfileQuery();
   const displayedData = data ?? currentData;
-  console.log(displayedData?.data?.name);
+  // console.log(displayedData?.data?.name);
   
   const [notificationCount, setNotificationCount] = useState(
     notifications.length

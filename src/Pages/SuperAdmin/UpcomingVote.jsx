@@ -1,14 +1,10 @@
 import { useState } from "react";
 
 //* Modal Table
-import AllPassengersTable from "../../Components/SuperAdminPages/PassengersPage/AllPassengersTable";
-import ViewPassengersModal from "../../Components/SuperAdminPages/PassengersPage/ViewPassengersModal";
-import {
-  useUpcomingVoteQuery,
-  useVotingResultQuery,
-} from "../../redux/api/adminApi";
 import AllUpcomeingVoteTable from "../../Components/SuperAdminPages/PassengersPage/AllUpcomeingVoteTable";
 import UpcomingVoteDelete from "../../Components/SuperAdminPages/PassengersPage/UpcomingVoteDelete";
+import { useUpcomingVoteQuery } from "../../redux/api/adminApi";
+import EditUpcommingBattle from "../../Components/SuperAdminPages/PassengersPage/EditUpcommingBattle";
 
 const UpcomingVote = () => {
   const [filters, setFilters] = useState({
@@ -25,53 +21,31 @@ const UpcomingVote = () => {
     }));
   };
   const { data, isLoading } = useUpcomingVoteQuery(filters);
-  //* Store Search Value
-
-  // console.log(data);
-
-  const [searchText, setSearchText] = useState("");
-
-  //* Use to set user
-
-  const [loading, setLoading] = useState(true);
 
   //* It's Use to Show Modal
   const [isCompanyViewModalVisible, setIsCompanyViewModalVisible] =
     useState(false);
-
-  //* It's Use to Block Modal
-  const [isCompanyBlockModalVisible, setIsCompanyBlockModalVisible] =
-    useState(false);
-
-  //* It's Use to Add Modal
-  const [isAddCompanyModalVisible, setIsAddCompanyModalVisible] =
-    useState(false);
+  const [isEdit, setIsEdit] = useState(false);
 
   //* It's Use to Set Seclected User to Block and view
   const [currentCompanyRecord, setCurrentCompanyRecord] = useState(null);
-
-  const onSearch = (value) => {
-    setSearchText(value);
-  };
-
-  const showAddCompanyModal = () => {
-    setIsAddCompanyModalVisible(true);
-  };
 
   const showCompanyViewModal = (record) => {
     setCurrentCompanyRecord(record);
     setIsCompanyViewModalVisible(true);
   };
+  const showEditModal = (record) => {
+    setIsEdit(true);
+    setCurrentCompanyRecord(record);
+  };
 
   const showCompanyBlockModal = (record) => {
     setCurrentCompanyRecord(record);
-    setIsCompanyBlockModalVisible(true);
   };
 
   const handleCancel = () => {
     setIsCompanyViewModalVisible(false);
-    setIsCompanyBlockModalVisible(false);
-    setIsAddCompanyModalVisible(false);
+    setIsEdit(false);
   };
 
   const handleCompanyBlock = (data) => {
@@ -80,7 +54,6 @@ const UpcomingVote = () => {
       companyName: data?.companyName,
     });
     setIsCompanyViewModalVisible(false);
-    setIsCompanyBlockModalVisible(false);
   };
 
   return (
@@ -118,6 +91,7 @@ const UpcomingVote = () => {
           loading={isLoading}
           showCompanyViewModal={showCompanyViewModal}
           showCompanyBlockModal={showCompanyBlockModal}
+          showEditModal={showEditModal}
           onPageChange={onPageChange}
         />
       </div>
@@ -127,6 +101,11 @@ const UpcomingVote = () => {
         handleCancel={handleCancel}
         currentCompanyRecord={currentCompanyRecord}
         handleCompanyBlock={handleCompanyBlock}
+      />
+      <EditUpcommingBattle
+        isEdit={isEdit}
+        handleCancel={handleCancel}
+        currentCompanyRecord={currentCompanyRecord}
       />
     </div>
   );

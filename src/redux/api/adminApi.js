@@ -127,6 +127,14 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: [tagTypes.users],
     }),
+    updateVoting: build.mutation({
+      query: (data) => ({
+        url: `/voting/update/${data.id}`,
+        method: "PATCH",
+        body: data.data,
+      }),
+      invalidatesTags: [tagTypes.vote],
+    }),
     //end
   }),
 });
@@ -146,4 +154,5 @@ export const {
   useUserOverviewQuery,
   useUpcomingVoteQuery,
   useDeleteVoteMutation,
+  useUpdateVotingMutation
 } = adminApi;
