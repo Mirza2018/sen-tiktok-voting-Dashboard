@@ -17,6 +17,7 @@ import { TimePicker } from "antd";
 import { DatePicker } from "antd";
 import { Select } from "antd";
 import dayjs from "dayjs";
+import { getImageUrl } from "../../../redux/getBaseUrl";
 
 const EditUpcommingBattle = ({
   isEdit,
@@ -73,7 +74,16 @@ const EditUpcommingBattle = ({
 
   const displayedData = data ?? currentData;
   const transformedOptions = displayedData?.data?.map((candidate) => ({
-    label: candidate.name,
+    label: (
+      <div className="flex items-center gap-3">
+        <img
+          src={getImageUrl() + candidate?.profileImage} // update this key to match your data
+          // alt={candidate.name}
+          className="w-8 h-8 rounded-full object-cover"
+        />
+        <span className="text-xl">{candidate.name}</span>
+      </div>
+    ),
     value: candidate._id,
   }));
 

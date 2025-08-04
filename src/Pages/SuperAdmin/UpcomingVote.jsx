@@ -77,7 +77,7 @@ const UpcomingVote = () => {
                 prefix={
                   <SearchOutlined className="text-primary-color font-bold text-lg mr-2" />
                 }
-              />
+              />    
             </ConfigProvider>
           </div> */}
         </div>

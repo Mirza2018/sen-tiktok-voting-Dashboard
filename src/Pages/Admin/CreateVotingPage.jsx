@@ -14,6 +14,7 @@ import {
   useCandidateListQuery,
   useVoteCreateMutation,
 } from "../../redux/api/adminApi";
+import { getImageUrl } from "../../redux/getBaseUrl";
 //* Modal Table
 
 const CreateVotingPage = () => {
@@ -29,8 +30,17 @@ const CreateVotingPage = () => {
   const format = "HH:mm";
   const navigate = useNavigate();
   const [form] = Form.useForm();
-  const transformedOptions = data?.data?.map((candidate) => ({
-    label: candidate.name,
+  const transformedOptions = displayedData?.data?.map((candidate) => ({
+    label: (
+      <div className="flex items-center gap-3">
+        <img
+          src={getImageUrl() + candidate?.profileImage} // update this key to match your data
+          // alt={candidate.name}
+          className="w-8 h-8 rounded-full object-cover"
+        />
+        <span className="text-xl">{candidate.name}</span>
+      </div>
+    ),
     value: candidate._id,
   }));
 
@@ -114,21 +124,6 @@ const CreateVotingPage = () => {
             <p className="text-3xl text-primary-color font-semibold ">
               Create Voting battle
             </p>
-            {/* <div className="flex gap-4 items-center">
-            <ConfigProvider
-              theme={{ token: { colorTextPlaceholder: "#f3f3f3" } }}
-            >
-              <Input
-                placeholder="Search User..."
-                value={searchText}
-                onChange={(e) => onSearch(e.target.value)}
-                className="font-semibold !border-primary-color !placeholder:text-secondary-color !bg-white text-secondary-color py-2 !rounded-full"
-                prefix={
-                  <SearchOutlined className="text-secondary-color font-bold text-lg mr-2" />
-                }
-              />
-            </ConfigProvider>
-          </div> */}
           </div>
         </div>
 

@@ -34,6 +34,7 @@ const DashboardLayout = () => {
     if (currentPath.includes("/earnings")) return ["earnings"];
     if (currentPath.includes("/offers")) return ["offers"];
     if (currentPath.includes("/notification")) return ["notification"];
+    if (currentPath.includes("/timer")) return ["timer"];
     return [currentPath.split("/")[1]];
   })();
 
@@ -182,6 +183,22 @@ const DashboardLayout = () => {
         />
       ),
       label: <NavLink to="create_voting">Create Voting</NavLink>,
+    },
+    {
+      key: "timer",
+      icon: (
+        <img
+          src={AllIcons.two}
+          alt="timer"
+          width={20}
+          style={{
+            filter: location.pathname.includes("timer")
+              ? "brightness(0) invert(0)"
+              : undefined,
+          }}
+        />
+      ),
+      label: <NavLink to="timer">Timer</NavLink>,
     },
   ];
 

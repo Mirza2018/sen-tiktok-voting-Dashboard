@@ -33,6 +33,7 @@ import Employees from "../Pages/SuperAdmin/Employees";
 import Passengers from "../Pages/SuperAdmin/Passengers";
 import SuperAdminDashboard from "../Pages/SuperAdmin/SuperAdminDashboard";
 import UpcomingVote from "../Pages/SuperAdmin/UpcomingVote";
+import Timer from "../Pages/Admin/Timer";
 
 function AuthRedirect() {
   const navigate = useNavigate();
@@ -88,9 +89,11 @@ const router = createBrowserRouter([
         path: "create_voting",
         element: <CreateVotingPage />,
       },
+      {
+        path: "timer",
+        element: <Timer />,
+      },
 
-      
-    
       {
         path: "settings",
         element: <SettingsPage />,
@@ -99,13 +102,12 @@ const router = createBrowserRouter([
         path: "settings/change-password",
         element: <SettingsChangePassword />,
       },
- 
-    
+
       {
         path: "notifications",
         element: <Notifications />,
       },
-      
+
       {
         path: "profile",
         element: <Profile />,

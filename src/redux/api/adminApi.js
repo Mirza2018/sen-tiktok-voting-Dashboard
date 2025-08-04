@@ -135,6 +135,23 @@ export const adminApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: [tagTypes.vote],
     }),
+    timmerSet: build.mutation({
+      query: (data) => ({
+        url: `/voting/add_to_upcoming`,
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: [tagTypes.timer],
+    }),
+
+    timmerGet: build.query({
+      query: () => ({
+        url: `/voting/get_upcoming_time`,
+        method: "GET",
+      }),
+      providesTags: [tagTypes.timer],
+    }),
+
     //end
   }),
 });
@@ -154,5 +171,7 @@ export const {
   useUserOverviewQuery,
   useUpcomingVoteQuery,
   useDeleteVoteMutation,
-  useUpdateVotingMutation
+  useUpdateVotingMutation,
+  useTimmerSetMutation,
+  useTimmerGetQuery
 } = adminApi;
