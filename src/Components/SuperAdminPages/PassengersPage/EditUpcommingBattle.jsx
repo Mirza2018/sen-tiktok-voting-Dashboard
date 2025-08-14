@@ -126,7 +126,7 @@ const EditUpcommingBattle = ({
       battleTime: formattedTime,
       battleStartDate: formateBattleDate,
       battleStartTime: formateBattleStartTime,
-      participates: result,
+      participates: transformedCandidates,
     };
 
     console.log(data);
