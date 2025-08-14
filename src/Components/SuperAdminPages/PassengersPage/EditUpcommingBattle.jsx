@@ -1,22 +1,14 @@
 /* eslint-disable react/prop-types */
-import { Button, Modal, Tooltip } from "antd";
-import { AllImages, Person } from "../../../../public/images/AllImages";
-import { HiOutlineExternalLink } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Button, Modal } from "antd";
 
+import { DatePicker, Form, InputNumber, Select, TimePicker } from "antd";
+import dayjs from "dayjs";
 import { useEffect } from "react";
+import { toast } from "sonner";
 import {
   useCandidateListQuery,
-  useDeleteVoteMutation,
   useUpdateVotingMutation,
 } from "../../../redux/api/adminApi";
-import { toast } from "sonner";
-import { Form } from "antd";
-import { InputNumber } from "antd";
-import { TimePicker } from "antd";
-import { DatePicker } from "antd";
-import { Select } from "antd";
-import dayjs from "dayjs";
 import { getImageUrl } from "../../../redux/getBaseUrl";
 
 const EditUpcommingBattle = ({
@@ -48,13 +40,15 @@ const EditUpcommingBattle = ({
       );
       const ss = String(remainingSeconds % 60).padStart(2, "0");
       const time = `${hh}:${mm}:${ss}`;
-      console.log("Days:", days);
-      console.log("Time:", time);
+      // console.log("Days:", days);
+      // console.log("Time:", time);
+      // console.log(currentCompanyRecord);
+      console.log(candidateId);
 
       form.setFieldsValue({
         battle_duration_days: days,
         battle_duration_minutes: time ? dayjs(time, "HH:mm:ss") : null,
-        battle_date: dayjs(currentCompanyRecord?.battleStartDate),
+        // battle_date: dayjs(currentCompanyRecord?.battleStartDate),
         candidate: candidateId,
         // battle_duration_days: currentCompanyRecord?.battle_duration_days,
         battle_start_time: currentCompanyRecord.battleStartTime
@@ -65,7 +59,7 @@ const EditUpcommingBattle = ({
   }, [currentCompanyRecord, form, isEdit]);
   // console.log(currentCompanyRecord);
 
-  console.log(currentCompanyRecord);
+  // console.log(currentCompanyRecord);
   const { data, currentData, isLoading, isFetching, isSuccess } =
     useCandidateListQuery({
       page: 1,
@@ -101,6 +95,16 @@ const EditUpcommingBattle = ({
     const transformedCandidates = values.candidate.map((id) => ({
       candidateId: id,
     }));
+    // console.log(values);
+    const result = transformedCandidates.map((tc) => {
+      const participant = currentCompanyRecord?.participates.find(
+        (p) => p.candidateId === tc.candidateId
+      );
+      return {
+        candidateId: tc.candidateId,
+        votes: participant ? participant.votes : 0,
+      };
+    });
 
     const battleDaysInHours = values.battle_duration_days * 24;
 
@@ -117,20 +121,16 @@ const EditUpcommingBattle = ({
 
     const formattedTime = `${hh}:${minutesStr}:${ss}${ss}`;
 
-    console.log(
-      formattedTime
-
-      // formateBattleStartTime,
-      // transformedCandidates
-    );
 
     const data = {
       battleTime: formattedTime,
       battleStartDate: formateBattleDate,
       battleStartTime: formateBattleStartTime,
-      participates: transformedCandidates,
+      participates: result,
     };
 
+    console.log(data);
+result
     try {
       const res = await updateVote({
         data,
