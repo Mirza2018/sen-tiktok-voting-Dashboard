@@ -87,18 +87,18 @@ const EditUpcommingBattle = ({
     const formateDurationTime = dayjs(values.battle_duration_minutes).format(
       "HH:mm:ss"
     );
-    const formateBattleDate = dayjs(values.battle_date)
-      .add(1, "day")
-      .format("YYYY-MM-DD");;
+    const formateBattleDate = dayjs(values.battle_date).format("YYYY-MM-DD");
+    // const formateBattleDate = dayjs(values.battle_date)
+    //   .add(1, "day")
+    //   .format("YYYY-MM-DD");;
     // const formateBattleDate = new Date(values.battle_date.$d).toISOString()
     const formateBattleStartTime = dayjs(values.battle_start_time).format(
       "HH:mm:ss"
     );
 
-// const formateBattleDate = dayjs(values.battle_date)
-//   .add(1, "day")
-//   .format("YYYY-MM-DD");
-
+    // const formateBattleDate = dayjs(values.battle_date)
+    //   .add(1, "day")
+    //   .format("YYYY-MM-DD");
 
     const transformedCandidates = values.candidate.map((id) => ({
       candidateId: id,
@@ -129,7 +129,6 @@ const EditUpcommingBattle = ({
 
     const formattedTime = `${hh}:${minutesStr}:${ss}${ss}`;
 
-
     const data = {
       battleTime: formattedTime,
       battleStartDate: formateBattleDate,
@@ -139,7 +138,7 @@ const EditUpcommingBattle = ({
 
     console.log(data);
 
-result
+    result;
     try {
       const res = await updateVote({
         data,
