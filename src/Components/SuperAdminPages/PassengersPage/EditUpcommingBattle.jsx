@@ -48,7 +48,7 @@ const EditUpcommingBattle = ({
       form.setFieldsValue({
         battle_duration_days: days,
         battle_duration_minutes: time ? dayjs(time, "HH:mm:ss") : null,
-        battle_date: dayjs(currentCompanyRecord?.battleStartDate),
+        // battle_date: dayjs(currentCompanyRecord?.battleStartDate),
         candidate: candidateId,
         // battle_duration_days: currentCompanyRecord?.battle_duration_days,
         battle_start_time: currentCompanyRecord.battleStartTime
