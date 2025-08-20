@@ -5,7 +5,7 @@ import {
   InputNumber,
   Select,
   Spin,
-  TimePicker
+  TimePicker,
 } from "antd";
 import dayjs from "dayjs";
 import { useNavigate } from "react-router-dom";
@@ -49,7 +49,9 @@ const CreateVotingPage = () => {
     const formateDurationTime = dayjs(values.battle_duration_minutes).format(
       "HH:mm:ss"
     );
-    const formateBattleDate = dayjs(values.battle_date).format("YYYY-MM-DD");
+const formateBattleDate = dayjs(values.battle_date)
+  .add(1, "day")
+  .format("YYYY-MM-DD");
     // const formateBattleDate = new Date(values.battle_date.$d).toISOString()
     const formateBattleStartTime = dayjs(values.battle_start_time).format(
       "HH:mm:ss"
@@ -86,7 +88,10 @@ const CreateVotingPage = () => {
       battleStartTime: formateBattleStartTime,
       participates: transformedCandidates,
     };
+    console.log(data);
+    
 
+    // return;
     try {
       const res = await createVote(data).unwrap();
       console.log(res);
@@ -149,8 +154,10 @@ const CreateVotingPage = () => {
               }
               name="battle_duration_days"
               className=" w-full"
+              initialValue={0}
             >
               <InputNumber
+             
                 controls={false}
                 className="!placeholder:text-secondary-color !placeholder:text-lg w-full border !border-secondary-color !py-1"
                 placeholder="0"
@@ -254,4 +261,3 @@ const CreateVotingPage = () => {
 };
 
 export default CreateVotingPage;
-

@@ -48,7 +48,7 @@ const EditUpcommingBattle = ({
       form.setFieldsValue({
         battle_duration_days: days,
         battle_duration_minutes: time ? dayjs(time, "HH:mm:ss") : null,
-        // battle_date: dayjs(currentCompanyRecord?.battleStartDate),
+        battle_date: dayjs(currentCompanyRecord?.battleStartDate),
         candidate: candidateId,
         // battle_duration_days: currentCompanyRecord?.battle_duration_days,
         battle_start_time: currentCompanyRecord.battleStartTime
@@ -87,11 +87,19 @@ const EditUpcommingBattle = ({
     const formateDurationTime = dayjs(values.battle_duration_minutes).format(
       "HH:mm:ss"
     );
-    const formateBattleDate = dayjs(values.battle_date).format("YYYY-MM-DD");
+    const formateBattleDate = dayjs(values.battle_date)
+      .add(1, "day")
+      .format("YYYY-MM-DD");;
     // const formateBattleDate = new Date(values.battle_date.$d).toISOString()
     const formateBattleStartTime = dayjs(values.battle_start_time).format(
       "HH:mm:ss"
     );
+
+// const formateBattleDate = dayjs(values.battle_date)
+//   .add(1, "day")
+//   .format("YYYY-MM-DD");
+
+
     const transformedCandidates = values.candidate.map((id) => ({
       candidateId: id,
     }));
@@ -130,6 +138,7 @@ const EditUpcommingBattle = ({
     };
 
     console.log(data);
+    return
 result
     try {
       const res = await updateVote({
