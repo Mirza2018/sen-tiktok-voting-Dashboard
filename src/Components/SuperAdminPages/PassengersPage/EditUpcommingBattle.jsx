@@ -138,7 +138,7 @@ const EditUpcommingBattle = ({
     };
 
     console.log(data);
-    return
+
 result
     try {
       const res = await updateVote({
