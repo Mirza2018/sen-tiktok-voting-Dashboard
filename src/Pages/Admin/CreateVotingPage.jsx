@@ -49,9 +49,7 @@ const CreateVotingPage = () => {
     const formateDurationTime = dayjs(values.battle_duration_minutes).format(
       "HH:mm:ss"
     );
-const formateBattleDate = dayjs(values.battle_date)
-  .add(1, "day")
-  .format("YYYY-MM-DD");
+    const formateBattleDate = dayjs(values.battle_date).format("YYYY-MM-DD");
     // const formateBattleDate = new Date(values.battle_date.$d).toISOString()
     const formateBattleStartTime = dayjs(values.battle_start_time).format(
       "HH:mm:ss"
@@ -89,7 +87,6 @@ const formateBattleDate = dayjs(values.battle_date)
       participates: transformedCandidates,
     };
     console.log(data);
-    
 
     // return;
     try {
@@ -157,7 +154,6 @@ const formateBattleDate = dayjs(values.battle_date)
               initialValue={0}
             >
               <InputNumber
-             
                 controls={false}
                 className="!placeholder:text-secondary-color !placeholder:text-lg w-full border !border-secondary-color !py-1"
                 placeholder="0"
