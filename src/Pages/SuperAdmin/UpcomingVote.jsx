@@ -85,7 +85,7 @@ const UpcomingVote = () => {
 
       {/* Table  */}
       <div className="px-10 py-10">
-        <AllUpcomeingVoteTable
+        <AllUpcomeingVoteTable 
           data={data?.data?.result}
           meta={data?.data?.meta}
           loading={isLoading}

@@ -5,6 +5,7 @@ import { getImageUrl } from "../../../redux/getBaseUrl";
 import { TbTrash } from "react-icons/tb";
 import { CiEdit } from "react-icons/ci";
 import { FaEdit } from "react-icons/fa";
+import dayjs from "dayjs";
 
 const AllUpcomeingVoteTable = ({
   data,
@@ -31,11 +32,17 @@ const AllUpcomeingVoteTable = ({
       title: "Battle Date",
       dataIndex: "battleStartDate",
       key: "battleStartDate",
-      render: (text) => (
-        <div className="flex items-center gap-2">
-          <p>{dateFunction(text)}</p>
-        </div>
-      ),
+      render: (text) => {
+        const myDate = new Date("2025-08-25T00:00:00.000Z");
+       const realdate= myDate.setDate(myDate.getDate() + 1);
+   
+        
+        return (
+          <div className="flex items-center gap-2">
+            <p>{dateFunction(realdate)}</p>
+            {/* <p>{medate}</p> */}
+          </div>
+        );},
     },
     {
       title: "Battle Start Time",
